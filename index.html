@@ -13,17 +13,26 @@
 
 </head>
 <body>
+    <h1> {{1+2}}</h1>
+
     
     <!-- Posts Posts Posts Posts-->
-    <div class="posts" ng-controller="PostController"> 
-        <div class="post-box" ng-init="postContent='Type your post here'">
-            <input type="text" ng-model="postContent"/>
-            <h1> {{postContent}} </h1>
-        </div>
-        <button class="PostButton"><a href</button>
+    <div ng-controller="PostController"> 
+            <form name="postArea" novalidate>
+                Type your post here:
+                <input  type="text" name="textBox" ng-model="post.content" ng-required="true" ng-maxlength="10"/>
+                <span class="error-message" ng-show="postArea.textBox.$dirty && postArea.textBox.$error.required">Mandatory Field</span>     
+                <span class="error-message" ng-show="postArea.textBox.$dirty && postArea.textBox.$error.maxlength">Maximum of 10 characters</span>
+                
+            
+            </form>
+        <button class="PostButton"><a href="#" >Post</a> </button>
+        <h1> {{post.content}} </h1>
+            <!-- Refer to model as post.content NOT $scope.post.content-->
+        
     </div>
     
-    
+
     
     
 </body>
