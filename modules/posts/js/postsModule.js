@@ -1,0 +1,1 @@
+angular.module('postsModule',['IMapp.posts.controllers','IMapp.posts.directives']);
