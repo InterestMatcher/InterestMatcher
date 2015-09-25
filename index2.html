@@ -1,49 +1,35 @@
 <html lang="en" ng-app="IMapp">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Chill Feed</title>
-	<meta name="author" content="Sevverre" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Chill Feed</title>
+		<meta name="author" content="Sevverre" />
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-	<link	rel="stylesheet"	type="text/css"	href="css/feed.css"/>
-  <script src="js/foundation.min.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
-	<script src="lib/angular.min.js"></script>
-	<script src="js/commands.js" type="text/javascript"></script>
-
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link	rel="stylesheet"	type="text/css"	href="css/feed.css"/>
+  	<script src="js/foundation.min.js"></script>
+  	<script>
+    	$(document).foundation();
+  	</script>
+		<script src="lib/angular.min.js"></script>
+		<script src="js/commands.js" type="text/javascript"></script>
 </head>
-    
-    
-<body>
-	<div class="navbar">
-    </div>
-    
-    
-    
-    
-    
-    
-	<div class="feed" ng->
-		<div class="comment-container">
-			<div class="comment-box large-4 columns">
-				<textarea id="comment" placeholder="Post a message..." Type="text"></textarea>
+
+    <body>
+			<div class="navbar">
+    	</div>
+			<div class="feed" ng-controller="ProfileController">
+				<div class="comment-container">
+					<div class="comment-box large-4 columns">
+						<textarea id="comment" placeholder="Post a message..." Type="text"></textarea>
+					</div>
+					<div class="post-buttons">
+						<button class="small-btn" type="button" onclick="post(false)">Cancel</button>
+						<button class="small-btn" type="button" onclick="post(true)">Submit</button>
+					</div>
+				</div>
+				<div id="feed-posts" class="feed-posts">
+					<h5 id="username-text">Temp Anon</h5>
+				</div>
 			</div>
-			<div class="post-buttons">
-				<button class="small-btn" type="button" onclick="post(false)">Cancel</button>
-				<button class="small-btn" type="button" onclick="post(true)">Submit</button>
-			</div>
-		</div>
-		<div id="feed-posts" class="feed-posts">
-			<h5 id="username-text">Temp Anon</h5>
-		</div>
-	</div>
-    
-    
-    
-    
-    
-    
-</body>
+		</body>
 </html>
