@@ -9,7 +9,9 @@
     <script src="modules/posts/js/controllers.js"></script>
     <script src="modules/posts/js/directives.js"></script>
     <script src="modules/posts/js/postsModule.js"></script>
-
+    <script src="modules/profiles/profileController.js"></script>
+    <script src="modules/profiles/profileModule.js"></script>
+    <script src="modules/profiles/directives.js"></script>
 
 </head>
 <body>
@@ -31,6 +33,16 @@
             <!-- Refer to model as post.content NOT $scope.post.content-->
         
     </div>
+    <div ng-controller="ProfileController" >
+    {{3+1}}
+        <ul>
+            <li ng-repeat="profile in profiles">
+              <span>{{profile.name}}</span>
+              <p>{{profile.events_created}}</p>
+            </li>
+        </ul>
+        <p><img ng-src="{{profile.prof_pic}}"> </p>
+        </div>    
     
 
     

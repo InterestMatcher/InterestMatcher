@@ -1,1 +1,1 @@
-angular.module('IMapp', ['postsModule']);
+angular.module('IMapp', ['postsModule', 'profileModule']);
