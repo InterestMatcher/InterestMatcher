@@ -5,7 +5,7 @@
     <title>Interest Matcher</title>
         
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="js/app.js"></script>
+    <link href="css/main.css" rel="stylesheet"/>
     <script src="modules/posts/js/controllers.js"></script>
     <script src="modules/posts/js/directives.js"></script>
     <script src="modules/posts/js/postsModule.js"></script>
@@ -15,37 +15,20 @@
 
 </head>
 <body>
-    <h1> {{1+2}}</h1>
-
-    
-    <!-- Posts Posts Posts Posts-->
-    <div ng-controller="PostController"> 
-            <form name="postArea" novalidate>
-                Type your post here:
-                <input  type="text" name="textBox" ng-model="post.content" ng-required="true" ng-maxlength="10"/>
-                <span class="error-message" ng-show="postArea.textBox.$dirty && postArea.textBox.$error.required">Mandatory Field</span>     
-                <span class="error-message" ng-show="postArea.textBox.$dirty && postArea.textBox.$error.maxlength">Maximum of 10 characters</span>
-                
-            
-            </form>
-        <button class="PostButton"><a href="#" >Post</a> </button>
-        <h1> {{post.content}} </h1>
-            <!-- Refer to model as post.content NOT $scope.post.content-->
-        
+    <div class="container">
+    	<div ng-controller="ProfileController">
+    	<div class="picContainer"style="text-align: center">
+    		<img class="profPic" src="pictures/sujay.jpg" height="200" width="200">
+    	</div>
+         <div class="userInfo">
+         	<h3 id="name">Sujay Khandekar</h3>
+         	<h3>Location: UIUC</h3>
+         	<h3>Rating: 5/5</h3>
+         </div>
+         <button id="editBtn" type="button medium-btn">Edit</button>
+    </div>      
     </div>
-    <div ng-controller="ProfileController" >
-    {{3+1}}
-        <ul>
-            <li ng-repeat="profile in profiles">
-              <span>{{profile.name}}</span>
-              <p>{{profile.events_created}}</p>
-            </li>
-        </ul>
-        <p><img ng-src="{{profile.prof_pic}}"> </p>
-        </div>    
     
-
-    
-    
+<script src="js/app.js"></script>
 </body>
 </html>
