@@ -52,8 +52,8 @@
 
     <div ng-controller="PostCtrl">
         <u1 class="postList">
-            <li ng-repeat="posts in userPosts">
-                {{userPosts.author}} : {{userPosts.content}}
+            <li ng-repeat="post in userPosts">
+                {{post.author}} : {{post.content}}
             </li>
         </u1>   
         <form ng-submit="addPost()">

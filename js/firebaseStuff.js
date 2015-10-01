@@ -11,7 +11,7 @@
 
 */
 
-var firebaseApp = angular.module('firebaseApp',[]);
+var firebaseApp = angular.module('firebaseApp',['firebase']);
 var mainRef = new Firebase('https://interestmatcher.firebaseio.com/');
 
 
@@ -35,7 +35,7 @@ firebaseApp.factory('userPosts', ['$firebaseArray',
 		console.log('userID:' + userID);
 
 		// Finds the reference to the user's posts in the database.
-		var ref = new Firebase('https://interestmatcher.firebaseio.com/' + userID +'/posts');
+		var ref = new Firebase('https://interestmatcher.firebaseio.com/posts');
 
 		console.log('data accessed?');
 
@@ -54,16 +54,15 @@ firebaseApp.controller('PostCtrl',['$scope','userPosts',
 		$scope.addPost = function(){
 
 			$scope.userPosts.$add({
-				author: mainRef.getAuth().uid,
-				title: $scope.newPostTitle,
-				content: $scope.newPostContent
+				author: mainRef.getAuth().facebook.display,
+				content: $scope.post
 
 			});
 
 			console.log('Data sent?');
 			// Reset title and content.
-			$scope.newPostTitle = '';
-			$scope.newPostContent = '';
+			//$scope.newPostTitle = '';
+			$scope.post = '';
 		}
 	}
 ]);
@@ -73,7 +72,7 @@ firebaseApp.controller('PostCtrl',['$scope','userPosts',
 	The public chatroom is every anyone can talk with anyone....
 
 */
-
+/*
 firebaseApp.factory('publicChatMessages',['$firebaseArray',
 	function($firebaseArray){
 		
@@ -103,3 +102,4 @@ firebaseApp.controller('publicChatController',['$scope','$publicChatMessages',
 		}
 	}
 ]);
+*/
