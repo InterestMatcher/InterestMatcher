@@ -12,17 +12,20 @@
 */
 
 
+var app = angular.module('facebookApp', ['firebase']);
+
+var mainRef = new Firebase("https://interestmatcher.firebaseio.com/");
+
 // ------------------ Controller for login-----------------------//
 
 // Use this controller with buttons and call the function "authFB()" with ng-click.
-app.controller('loginCtrl', ["$scope", function($scope){
+app.controller('LoginCtrl', ["$scope", function($scope){
 
   $scope.authFB = authFB;
 
 }]);
 
-
-function authFB($scope){
+function authFB(){
 
   var ref = new Firebase("https://interestmatcher.firebaseio.com/");
 
@@ -40,6 +43,7 @@ function authFB($scope){
    scope: "email"
  }
  );
+
 }
 
 
@@ -69,7 +73,8 @@ ref.onAuth(function(authData){
       })
     } 
   
-    // TODO: Redirect user to another page or do other things.
+    // Redirects user to main page.
+    window.location.href = "home.html";
   }
 });
 
