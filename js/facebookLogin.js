@@ -7,7 +7,7 @@
   Created by: Lucas Message (09/28/2015)
 
   EDITS (Name, date and change):
-
+    - Will Robbins, 9/30/2015, Fixed (I'm fairly sure) the problem of data not persisting between logins.
 
 */
 
@@ -67,7 +67,7 @@ ref.onAuth(function(authData){
 
     // Creates new user if it does not exist.
     if (!isExistingUser){
-      ref.child(authData.uid).set({
+      ref.child(authData.uid).update({
         provider: authData.provider,
         name: getName(authData),
       })
