@@ -51,23 +51,27 @@
         </div>     
     </div>
 -->
-    <div class="banner"></div>
-    <h1>Posts</h1>
-    <div ng-controller="PostCtrl">
-        <p>
-        <u1 class="postList">
-            <li ng-repeat="post in userPosts">
-                {{post.author}} : {{post.content}}
-            </li>
-        </u1>   
-        <form ng-submit="addPost()">
-            <input type="text" ng-model="post">
-            <input type="submit" value="Create Post">
-        </form> 
-    </p>
+<div class="banner"></div>
+<h1>Posts</h1>
+<div ng-controller="PostCtrl">
+    <p>
+        <div class="postList" ng-repeat="post in userPosts">
+            <!-- Can't get the image to show up
+            <img class = "profilePic" src= "http://graph.facebook.com/"{{post.facebookID}}"/picture" width="50" height="50">
+            -->
+            <b>
+            {{post.author}} :
+            </b>
+            {{post.content}}
+        </div>
+            <form ng-submit="addPost()">
+                <input type="text" ng-model="post">
+                <input type="submit" value="Create Post">
+            </form> 
+        </p>
     </div> 
 
-    
-    
+
+
 </body>
 </html>   

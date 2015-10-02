@@ -10,7 +10,7 @@
 	margin-bottom: 100px;
 }
 
-h1, p{
+h1, p, h3, h2, nameHeader{
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -21,8 +21,13 @@ h1{
 	color: #77236c;
 }
 
+
 p{
 	font-size: 32px;
 	text-align: center;
 	color: #545454;
+}
+
+.postList{
+	
 }

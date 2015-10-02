@@ -50,12 +50,18 @@ firebaseApp.controller('PostCtrl',['$scope','userPosts',
 
 		$scope.userPosts = userPosts;
 
+		var fullID = mainRef.getAuth().uid;
+		var fbString = "facebook:";
+
+		$scope.facebookID = fullID.substring(fbString.length,fullID.length);
+		console.log("Just the ID:"  + $scope.facebookID);
 		// Function used to add a new post.
 		$scope.addPost = function(){
 
 			$scope.userPosts.$add({
 				author: mainRef.getAuth().facebook.displayName,
-				content: $scope.post
+				content: $scope.post,
+				facebookID: $scope.facebookID,
 
 			});
 
