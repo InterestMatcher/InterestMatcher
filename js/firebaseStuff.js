@@ -54,7 +54,7 @@ firebaseApp.controller('PostCtrl',['$scope','userPosts',
 		$scope.addPost = function(){
 
 			$scope.userPosts.$add({
-				author: mainRef.getAuth().facebook.display,
+				author: mainRef.getAuth().facebook.displayName,
 				content: $scope.post
 
 			});
