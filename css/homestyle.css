@@ -1,33 +1,116 @@
-.banner{
-	height: 218px;
-    width: 799px;
-    background-image: url("../logo.png");
-    background-repeat: no-repeat;
-	background-size: cover;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top : 50px;
-	margin-bottom: 100px;
+/*
+	COLOR SCHEME
+		Vibrant blue: #47b2c2
+		Light blue: #99dddd
+		Yellow: #eaeecb
+		Orange: #e47c1e
+		Red: #d44e0e
+
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
-h1, p, h3, h2, nameHeader{
+.header{
+	position:relative;
+	height:70px;
+	background-color:white;
+	border-width: 0px;
+	border-bottom: 5px;
+	border-style: solid;
+	border-color:#47b2c2;
+}
+
+.menu{
+	position:absolute;
+	top:0px;
+	right: 0px;
+	height:inherit;
+	width: 87%;
+	background-color:#99dddd;
+	border-width: 0px;
+	border-left: 5px;
+	border-style: solid;
+	border-color:#47b2c2;
+}
+
+#banner{
+	position:relative;
+	height: 70px;
+  background-image: url("../logo.png");
+  background-repeat: no-repeat;
+	margin-left: 10px;
+	top: 12px;
+}
+
+.content{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color: black;
+}
+
+.postArea{
+	position:absolute;
+	width: 80%;
+	height: inherit;
+	background-color: white;
+}
+
+.chatArea{
+	position: fixed;
+	top:0px;
+	width: 20%;
+	height:100%;
+	right:0px;
+	background-color: #eaeecb;
+	border-width: 0px;
+	border-left: 5px;
+	border-style: solid;
+	border-color:#e47c1e;
+}
+
+.chatHeader{
+	position: relative;
+	line-height: 1px;
+	border-width: 0px;
+	border-bottom: 2px;
+	border-style: solid;
+	border-color:#e47c1e;
+}
+
+h1, p, h3, h2{
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h1{
-
-	font-size: 48px;
+	font-size: 36px;
 	text-align: center;
-	color: #77236c;
+	color: #47b2c2;
 }
 
+body{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 12px;
+}
 
-p{
-	font-size: 32px;
-	text-align: center;
-	color: #545454;
+#userName{
+	color: #e47c1e;
+	font-weight: bold;
+	margin-left: 30px;
+}
+
+#message{
+	margin-left: 14px;
 }
 
 .postList{
+	margin-bottom: 10px;
+	border-width: 0px;
+	border-bottom: 1px;
+	border-style: solid;
+	border-color: #99dddd;
 	
 }
