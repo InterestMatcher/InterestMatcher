@@ -8,16 +8,16 @@
     <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>   
 </head>
-<body>
-	<div class="userInfo" ng-controller="ProfileController">
+<body ng-controller="ProfileController">
+	<div class="userInfo" ng-repeat="info in samplePerson">
 		<div class="name">
-			<span>Name: </span>
+			<span>{{ info.name }}</span>
 		</div>
 		<div class="location">
-			<span>Location: </span>
+			<span>{{ info.location }}</span>
 		</div>
 		<div class="rating">
-			<span>Rating: </span>
+			<span>{{ info.rating }}</span>
 		</div>
 	</div>
 	
