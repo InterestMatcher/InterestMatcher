@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Interest Matcher</title>
-        
+    <link rel="stylesheet" type="text/css" href="css/loginstyle.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/homestyle.css"></link> 
+    
     <script src="js/angular.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>   
@@ -16,16 +18,22 @@
     <script src="modules/profiles/profileController.js"></script>
     <script src="modules/profiles/profileModule.js"></script>
     <script src="modules/profiles/directives.js"></script>
+    <script src="modules/login/loginModule.js"></script>
+    <script src="modules/login/loginController.js"></script>
+    <script src="modules/login/onLoginScript.js"></script>
+    <script src="modules/home/homeModule.js"></script>
+    <script src="modules/home/homeController.js"></script>
+    <script src="modules/home/homeServices.js"></script>
 
 </head>
 <body>
     
     <!-- Posts Posts Posts Posts-->
-
-<button>
-    <a href="userAccount.html">View Profile</a>
-</button>    
-    
+    <!--
+    <button>
+        <a href="userAccount.html">View Profile</a>
+    </button>    
+    -->
     
     
 <div ui-view></div>

@@ -1,3 +1,4 @@
+
 var profileApp = angular.module('profileApp', ["xeditable"])
 
 profileApp.controller('ProfileController', function($scope) {
