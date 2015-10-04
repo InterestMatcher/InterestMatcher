@@ -1,10 +1,9 @@
-var profileApp = angular.module('IMapp.profile.controllers', [])
+var profileApp = angular.module('profileApp', ["xeditable"])
 
 profileApp.controller('ProfileController', function($scope) {
-    $scope.profiles = [
-    {
-      'name': 'Sujay Khandekar',
-      'events_created': '3'
-    }
-   ];
+    $scope.samplePerson = {
+ 		name : "Sujay",
+ 		location : "ACM",
+ 		rating : 5
+    };
 });
