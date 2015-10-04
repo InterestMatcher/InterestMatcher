@@ -1,11 +1,11 @@
 
-angular.module('postsModule', ['IMapp.posts.controllers', 'IMapp.posts.directives']);
+angular.module('postsModule', ['IMapp.posts.controllers', 'IMapp.posts.directives', 'IMapp.posts.services', 'ui.router']);
 
-angular.module('IMapp.posts').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
+angular.module('postsModule').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
     $stateProvider.state('allPosts', {
         url: '/posts',
         templateUrl: 'modules/posts/views/posts.html',
-        controller = 'PostController'
+        controller: 'PostController'
     });
     $stateProvider.state('singlePost', {
         url: '/posts/:id/:permalink',

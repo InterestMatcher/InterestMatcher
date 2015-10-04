@@ -19,7 +19,10 @@ angular.module('IMapp.posts.services', []).factory('postService', function () {
             date: '2015-10-4'
         }],
         getAll: function () {
-            for (var i in this.posts) {
+            return this.posts;
+        },
+        getPostById: function (id) {
+            for ( var i in this.posts) {
                 if (this.posts[i].id == id) {
                     return this.posts[i];
                 }
