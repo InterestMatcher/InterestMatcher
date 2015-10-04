@@ -38,12 +38,12 @@
         <div class="postArea"></div>
 
 
-        <div class="chatArea">
+        <div class="chatArea" ng-controller="PostCtrl">
             <div class="chatHeader"><h1>Public Chat</h1></div>
             
             <div class="chatSpacer"></div>
 
-            <div ng-controller="PostCtrl">
+            <div>
                 <div="postList" ng-repeat="post in userPosts">
                     <div id="userName">{{post.author}}</div>
                     <div id="message">{{post.content}}</div>
