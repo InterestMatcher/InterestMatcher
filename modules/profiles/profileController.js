@@ -1,4 +1,4 @@
-var profileApp = angular.module('profileApp', [])
+var profileApp = angular.module('profileApp', ["xeditable"])
 
 profileApp.controller('ProfileController', function($scope) {
     $scope.samplePerson = {
