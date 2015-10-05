@@ -35,7 +35,7 @@ ref.onAuth(function(authData){
   
     // Redirects user to main page.
     angular.module('IMapp').run(['$state', function($state) {
-    $state.go('allPosts');
+    $state.go('home');
 }]);
   }
 });

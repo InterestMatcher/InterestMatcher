@@ -1,2 +1,2 @@
 
-angular.module('profileModule',['IMapp.profile.controllers','IMapp.profile.directives']);
+angular.module('profileModule',['profileApp','IMapp.profile.directives']);

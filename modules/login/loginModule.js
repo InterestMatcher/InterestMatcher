@@ -1,6 +1,6 @@
 
 
-angular.module('loginModule', ['firebase', 'firebaseApp', 'facebookApp']);
+angular.module('loginModule', ['firebase']);
 
 angular.module('loginModule').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
     $stateProvider.state('loginPage', {
