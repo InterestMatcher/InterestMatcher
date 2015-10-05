@@ -1,12 +1,15 @@
 /*
 	COLOR SCHEME
-		Vibrant blue: #47b2c2
-		Light blue: #99dddd
-		Yellow: #eaeecb
-		Orange: #e47c1e
-		Red: #d44e0e
+		Use these colors and these colors only for the whole project.	
+
+.color-primary-0 { color: #5FBAFF }	Main Primary color 
+.color-primary-1 { color: #BBE1FF }
+.color-primary-2 { color: #88CBFF }
+.color-primary-3 { color: #36A8FF }
+.color-primary-4 { color: #0E94FB }
 
 */
+
 
 html, body {
     margin: 0;
@@ -39,7 +42,7 @@ html, body {
 #banner{
 	position:relative;
 	height: 70px;
-  background-image: url("../logo.png");
+  background-image: url("../assets/logo_low.png");
   background-repeat: no-repeat;
 	margin-left: 10px;
 	top: 12px;
@@ -48,7 +51,7 @@ html, body {
 #loginbanner{
 	height: 218px;
     width: 799px;
-    background-image: url("../logo.png");
+    background-image: url("../assets/logo_med.png");
     background-repeat: no-repeat;
 	background-size: cover;
 	margin-left: auto;
