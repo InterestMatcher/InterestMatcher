@@ -1,14 +1,13 @@
 /*
 	COLOR SCHEME
 		Use these colors and these colors only for the whole project.	
+*/
 
-.color-primary-0 { color: #5FBAFF }	Main Primary color 
+.color-primary-0 { color: #5FBAFF }	/* Main Primary color */ 
 .color-primary-1 { color: #BBE1FF }
 .color-primary-2 { color: #88CBFF }
 .color-primary-3 { color: #36A8FF }
 .color-primary-4 { color: #0E94FB }
-
-*/
 
 
 html, body {
@@ -19,45 +18,59 @@ html, body {
 .header{
 	position:relative;
 	height:70px;
-	background-color:white;
+	background-color:  white;
 	border-width: 0px;
 	border-bottom: 5px;
 	border-style: solid;
-	border-color:#47b2c2;
+	border-color: #5FBAFF;
 }
 
 .menu{
 	position:absolute;
 	top:0px;
-	right: 0px;
+	left: 210px;
 	height:inherit;
-	width: 87%;
-	background-color:#99dddd;
+	top: 20px;
+	width: 800px;
+	background-color: #BBE1FF;
 	border-width: 0px;
 	border-left: 5px;
+	border-top: 5px;
+	border-right: 5px;
 	border-style: solid;
-	border-color:#47b2c2;
+	border-color: #5FBAFF;
+}
+
+.buttonSpacer{
+	position:absolute;
+	width: 50px;
+	height: 50px;
+	background-color: white;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
 }
 
 #banner{
 	position:relative;
-	height: 70px;
-  background-image: url("../assets/logo_low.png");
-  background-repeat: no-repeat;
+	height: 64px;
+	width: 184px;
+ 	background-image: url("../assets/logo_low.png");
+    background-repeat: no-repeat;
 	margin-left: 10px;
-	top: 12px;
+	top: 5px;
 }
 
 #loginbanner{
-	height: 218px;
-    width: 799px;
+	height: 348px;
+    width: 1000px;
     background-image: url("../assets/logo_med.png");
     background-repeat: no-repeat;
-	background-size: cover;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top : 50px;
-	margin-bottom: 100px;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .content{
@@ -80,11 +93,11 @@ html, body {
 	width: 20%;
 	height:100%;
 	right:0px;
-	background-color: #eaeecb;
+	background-color: white;
 	border-width: 0px;
-	border-left: 5px;
+	border-left: 1px;
 	border-style: solid;
-	border-color:#e47c1e;
+	border-color:#5FBAFF ;
 	overflow: scroll;
 	word-wrap: break-word;
 	
@@ -94,9 +107,9 @@ html, body {
 	position: relative;
 	line-height: 1px;
 	border-width: 0px;
-	border-bottom: 2px;
+	border-bottom: 1px;
 	border-style: solid;
-	border-color:#e47c1e;
+	border-color:#5FBAFF;
 }
 
 h1, p, h3, h2{
@@ -106,12 +119,18 @@ h1, p, h3, h2{
 h1{
 	font-size: 36px;
 	text-align: center;
-	color: #47b2c2;
+	color: #0E94FB;
+}
+
+h2{
+	font-size: 24px;
+	text-align: center;
+	color: #36A8FF ;
 }
 
 body{
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 #userName{
@@ -122,14 +141,15 @@ body{
 
 #message{
 	margin-left: 14px;
+	margin-right: 14px;
+	border-width: 0px;
+	border-bottom: 1px;
+	border-style: solid;
+	border-color: #BBE1FF;
 }
 
 .postList{
 	margin-bottom: 10px;
-	border-width: 0px;
-	border-bottom: 1px;
-	border-style: solid;
-	border-color: #99dddd;
 }
 
 
@@ -147,4 +167,5 @@ body{
 	right: 105px;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	font-size: 20px;
+	cursor: pointer;
 }
