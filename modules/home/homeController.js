@@ -1,11 +1,13 @@
 var app = angular.module('homeModule');
 
+var mainRef = new Firebase("https://interestmatcher.firebaseio.com/");
+
 app.controller('ChatController',['$scope','publicChatMessages',
-	function($scope, userPosts){
+	function($scope, publicChatMessages){
 
 		console.log('psst');
 
-		$scope.userPosts = userPosts;
+		$scope.messages = publicChatMessages;
 
 		var fullID = mainRef.getAuth().uid;
 		var fbString = "facebook:";
@@ -13,11 +15,11 @@ app.controller('ChatController',['$scope','publicChatMessages',
 		$scope.facebookID = fullID.substring(fbString.length,fullID.length);
 		console.log("Just the ID:"  + $scope.facebookID);
 		// Function used to add a new post.
-		$scope.addPost = function(){
+		$scope.addMessage = function(){
 
-			$scope.userPosts.$add({
+			$scope.messages.$add({
 				author: mainRef.getAuth().facebook.displayName,
-				content: $scope.post,
+				content: $scope.message,
 				facebookID: $scope.facebookID,
 
 			});
