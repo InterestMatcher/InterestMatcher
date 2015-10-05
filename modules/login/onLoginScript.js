@@ -17,6 +17,7 @@ var ref = new Firebase("https://interestmatcher.firebaseio.com/users");
 
 ref.onAuth(function(authData){
   
+  console.log('User logged in');
 
   if (authData){
     
@@ -35,7 +36,8 @@ ref.onAuth(function(authData){
   
     // Redirects user to main page.
     angular.module('IMapp').run(['$state', function($state) {
-    $state.go('home');
+    $state.go('allPosts');
+    console.log("User redirected.");
 }]);
   }
 });
