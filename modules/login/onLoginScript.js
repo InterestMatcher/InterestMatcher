@@ -36,10 +36,11 @@ ref.onAuth(function(authData){
   
     // Redirects user to main page.
     angular.module('IMapp').run(['$state', function($state) {
-    $state.go('allPosts');
-    console.log("User redirected.");
+      $state.go('homePage');
+      console.log("User redirected.");
 }]);
   }
+  
 });
 
 // Returns a good name for the user based on their login choice.
