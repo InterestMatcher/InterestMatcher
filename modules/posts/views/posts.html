@@ -1,8 +1,18 @@
+<style>
+    .postTitle
+    {
+        
+    }
+    
+
+</style>
+
+
 <div>
     <div ng-repeat="post in posts track by $index">
         <div>
             <h3 class="postTitle"><a ui-sref="singlePost({id:post.id, permalink:post.permalink})"> {{post.title}} </a></h3>    
-            <h5> By: {{post.author}} | {{post.date}}</h5>
+            <span> <h5> By: {{post.author}} | {{post.date}}</h5> </span>
         </div>
     </div>
 </div>
