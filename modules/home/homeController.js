@@ -4,6 +4,11 @@ var mainRef = new Firebase("https://interestmatcher.firebaseio.com/");
 
 app.controller('HomeController',['$scope', '$state', function($scope, $state){
 
+	// Redirects user to login page if they are not logged in.
+	if (mainRef.getAuth() == null){
+		$state.go('loginPage');
+	}
+	
 }]);
 
 app.controller('ChatController',['$scope','publicChatMessages',
