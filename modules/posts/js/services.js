@@ -36,7 +36,7 @@ angular.module('IMapp.posts.services').factory('frontPagePosts',['$firebaseArray
     
     console.log("Retrieving posts on the front page.");
     
-    var ref = new Firebase('https://interestmatcher.firebaseio.com/posts/chill.com');
+    var ref = new Firebase('https://interestmatcher.firebaseio.com/posts/chill');
     
     return $firebaseArray(ref);
 }])

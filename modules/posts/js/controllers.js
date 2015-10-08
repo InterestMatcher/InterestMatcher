@@ -2,7 +2,7 @@
 angular.module('IMapp.posts.controllers', []).controller('PostController', ['$scope', 'frontPagePosts', function ($scope, frontPagePosts){
     $scope.posts = frontPagePosts;
     
-    var ref = new Firebase("https://interestmatcher.firebaseio.com/posts/chill.com");
+    var ref = new Firebase("https://interestmatcher.firebaseio.com/posts/chill");
     
     $scope.addPost = function(){
         $scope.posts.$add({
