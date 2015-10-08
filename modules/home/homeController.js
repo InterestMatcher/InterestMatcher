@@ -2,6 +2,10 @@ var app = angular.module('homeModule');
 
 var mainRef = new Firebase("https://interestmatcher.firebaseio.com/");
 
+app.controller('HomeController',['$scope', '$state', function($scope, $state){
+
+}]);
+
 app.controller('ChatController',['$scope','publicChatMessages',
 	function($scope, publicChatMessages){
 

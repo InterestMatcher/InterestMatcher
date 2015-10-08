@@ -10,14 +10,48 @@
 
 var app = angular.module('loginModule');
 
+
+var isExistingUser = false;
+
 var mainRef = new Firebase("https://interestmatcher.firebaseio.com/");
 
 // ------------------ Controller for login-----------------------//
 
 // Use this controller with buttons and call the function "authFB()" with ng-click.
-app.controller('LoginController', ["$scope", function($scope){
+app.controller('LoginController', ["$scope", '$state', function($scope, $state){
 
   $scope.authFB = authFB;
+  
+  $scope.redirectToHome = function(){
+		$state.go('homePage');
+	}
+  
+  mainRef.onAuth(function(authData){
+  
+    console.log('User logged in');
+    var ref = new Firebase("https://interestmatcher.firebaseio.com/users");
+  
+    if (authData){
+      
+      // Check if user is in database.
+      ref.once("value",function(snapshot){
+        isExistingUser = snapshot.hasChild(authData.uid);
+      }); 
+  
+      // Creates new user if it does not exist.
+      if (!isExistingUser){
+        ref.child(authData.uid).update({
+          provider: authData.provider,
+          name: getName(authData),
+        })
+      } 
+      
+          
+   $scope.redirectToHome();
+    }
+
+  
+});
 
 }]);
 
@@ -40,4 +74,14 @@ function authFB(){
  }
  );
 
+}
+
+// Returns a good name for the user based on their login choice.
+function getName(authData){
+  switch(authData.provider){
+    case "password":
+      return authData.password.email.replace(/@.*/,'');
+    case "facebook":
+      return authData.facebook.displayName;
+  }
 }
