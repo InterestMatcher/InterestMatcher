@@ -1,5 +1,5 @@
 
-angular.module('homeModule', ['firebase', 'ui.router']);
+angular.module('homeModule', ['firebase', 'ui.router', 'postsModule']);
 
 angular.module('homeModule').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
     $stateProvider.state('homePage', {
@@ -7,4 +7,15 @@ angular.module('homeModule').config(['$stateProvider', '$locationProvider', func
         templateUrl: 'home.html',
         controller:'HomeController'
     });
+    $stateProvider.state('homePage.allPosts', {
+        url: '/posts',
+        templateUrl: 'modules/posts/views/posts.html',
+        controller: 'PostController'
+    });
+    $stateProvider.state('homePage.singlePost', {
+        url: '/posts/:id/:permalink',
+        templateUrl: 'modules/posts/views/singlePost.html',
+        controller: 'PostDetailsController'
+    });
 }]);
+
