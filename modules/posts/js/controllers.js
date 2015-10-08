@@ -7,7 +7,7 @@ angular.module('IMapp.posts.controllers', []).controller('PostController', ['$sc
     $scope.addPost = function(){
         $scope.posts.$add({
             author: ref.getAuth().facebook.displayName,
-            title: "Hi, I am not a title!",
+            title: $scope.title,
             date: new Date().toJSON(),
             content: $scope.content,
             comments: {}
