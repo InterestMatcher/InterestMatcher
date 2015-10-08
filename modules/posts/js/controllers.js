@@ -21,7 +21,7 @@ angular.module('IMapp.posts.controllers', []).controller('PostController', ['$sc
     };
     
     $scope.closePost = function () {
-        $state.go('allPosts');
+        $state.go('.allPosts');
     };
     
     $scope.singlePost = $scope.getPostById($stateParams.id);
