@@ -17,5 +17,10 @@ angular.module('homeModule').config(['$stateProvider', '$locationProvider', func
         templateUrl: 'modules/posts/views/singlePost.html',
         controller: 'PostDetailsController'
     });
+     $stateProvider.state('homePage.createPost', {
+        url: '/submit',
+        templateUrl: 'modules/posts/views/createPost.html',
+        controller: 'PostController'
+    });
 }]);
 
