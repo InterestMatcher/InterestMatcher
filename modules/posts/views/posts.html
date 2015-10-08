@@ -5,37 +5,13 @@
         <div class="postSpacer">
             <div id="postTitle"> <a ui-sref="singlePost({id:post.id, permalink:post.permalink})"> {{post.title}} </a></div>
             <div id="postAuthor">{{post.author}}</div>
-            <div id="postDate">{{post.date | date 'medium'}}</div>
+            <div id="postDate">{{post.date | date: 'medium'}}</div>
             
             
                
         </div>
     </div>
-    <style>
-        .myButton {
-	background-color:#44c767;
-	-moz-border-radius:28px;
-	-webkit-border-radius:28px;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-}
-.myButton:hover {
-	background-color:#5cbf2a;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
+    <a ui-sref="createPost"> posts </a>
 
-    </style>
-    <a ui-sref="createPost" class="myButton">Submit A Post</a>
-     
+
 </div>
