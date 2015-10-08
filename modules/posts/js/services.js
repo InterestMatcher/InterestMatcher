@@ -32,7 +32,7 @@ angular.module('IMapp.posts.services', []).factory('postService', function () {
 });
 
 // This factory retrieves all posts on the front page.
-angular.module('postsModule').factory('frontPagePosts',['$firebaseArray',function($firebaseArray){
+angular.module('IMapp.posts.services').factory('frontPagePosts',['$firebaseArray',function($firebaseArray){
     
     console.log("Retrieving posts on the front page.");
     
