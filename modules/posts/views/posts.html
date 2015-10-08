@@ -1,8 +1,18 @@
-<div>
+<div ng-controller="PostController">
+
     <div ng-repeat="post in posts track by $index">
-        <div>
-            <h3 class="postTitle"><a ui-sref="singlePost({id:post.id, permalink:post.permalink})"> {{post.title}} </a></h3>    
-            <h5> By: {{post.author}} | {{post.date}}</h5>
+        <div class="postSpacer">
+            <div id="postTitle">{{post.title}}</div>
+            <div id="postAuthor">{{post.author}}</div>
+            <div id="postDate">{{post.date}}</div>
+            
+            
+            <a ui-sref="singlePost({id:post.id, permalink:post.permalink})"> {{post.title}} </a>    
         </div>
     </div>
+    
+     <form ng-submit="addPost()">
+        <input type="text" ng-model="content">
+        <input type="submit" value="Send">
+     </form>
 </div>
