@@ -5,7 +5,7 @@
         <div class="postSpacer">
             <div id="postTitle">{{post.title}}</div>
             <div id="postAuthor">{{post.author}}</div>
-            <div id="postDate">{{post.date}}</div>
+            <div id="postDate">{{post.date | date 'medium'}}</div>
             
             
             <a ui-sref="singlePost({id:post.id, permalink:post.permalink})"> {{post.title}} </a>    
