@@ -13,7 +13,7 @@ angular.module('homeModule').config(['$stateProvider', '$locationProvider', func
         controller: 'PostController'
     });
     $stateProvider.state('homePage.singlePost', {
-        url: '/posts/:id/:permalink',
+        url: '/posts:id/:permalink',
         templateUrl: 'modules/posts/views/singlePost.html',
         controller: 'PostDetailsController'
     });
