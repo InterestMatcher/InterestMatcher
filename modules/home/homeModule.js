@@ -10,10 +10,10 @@ angular.module('homeModule').config(['$stateProvider', '$locationProvider', func
     $stateProvider.state('homePage.allPosts', {
         url: '/posts',
         templateUrl: 'modules/posts/views/posts.html',
-        controller: 'PostController'
+        controller: 'PostController',
     });
     $stateProvider.state('homePage.singlePost', {
-        url: '/posts/:permalink',
+        url: '/posts/:ID',
         templateUrl: 'modules/posts/views/singlePost.html',
         controller: 'PostDetailsController'
     });

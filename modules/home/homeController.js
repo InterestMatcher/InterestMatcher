@@ -8,7 +8,7 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 	if (mainRef.getAuth() == null){
 		$state.go('loginPage');
 	}
-    $state.go('.allPosts');
+    $state.go('homePage.allPosts');
 }]);
 app.controller('ChatController',['$scope','publicChatMessages',
 	function($scope, publicChatMessages){
