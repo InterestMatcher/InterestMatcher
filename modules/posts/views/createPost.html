@@ -1,8 +1,13 @@
 <div class="postMake">
-    <form ng-submit="addPost()">
+    <div id="newPostHeader">
+        <h1>Create a New Post</h1>
+        <h2>Share your idea, challenge, worries...</h2>
+    </div>
+    
+    
+    <form class="newPostForm" ng-submit="addPost()">
         Title: <input type="text" ng-model="title">
         Text: <input type="text" ng-model="content">
-        
         <input type="submit" value="Send">
-     </form>
+    </form>
 </div>

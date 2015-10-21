@@ -13,16 +13,19 @@ angular.module('IMapp.posts.controllers', []).controller('PostController', ['$sc
             comments: {}
         })
         
+     //   .then(function(childRef) {
+       //     var id = childRef.key();
+         //   console.log("added record with id " + id);
+       // }
     }
 
-}]).controller('PostDetailsController', ['$stateParams', '$state', '$scope', 'postService', function ($stateParams, $state, $scope, postService) {
-    $scope.getPostById = function (id) {
-    return postService.getPostById(id);
-    };
+    
+
+}]).controller('PostDetailsController', ['$stateParams', '$state', '$scope', function ($stateParams, $state, $scope) {
     
     $scope.closePost = function () {
         $state.go('.allPosts');
     };
     
-    $scope.singlePost = $scope.getPostById($stateParams.id);
+    $scope.singlePostLink = $stateParams.permalink;
 }]);
