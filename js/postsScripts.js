@@ -1,8 +1,8 @@
 
-angular.module('postsModule', ['IMapp.posts.controllers', 'IMapp.posts.directives', 'IMapp.posts.services', 'ui.router', 'firebase']);
+angular.module('postModule', ['ui.router', 'firebase']);
 
 
-angular.module('IMapp.posts.controllers', []).controller('PostController', ['$scope','$stateParams', 'frontPagePosts', '$state',function ($scope,$stateParams,frontPagePosts, $state){
+angular.module('postModule').controller('PostController', ['$scope','$stateParams', 'frontPagePosts', '$state',function ($scope,$stateParams,frontPagePosts, $state){
     $scope.posts = frontPagePosts;
     
     var ref = new Firebase("https://interestmatcher.firebaseio.com/posts/chill");
@@ -45,10 +45,8 @@ angular.module('IMapp.posts.controllers', []).controller('PostController', ['$sc
     
 }]);
 
-angular.module('IMapp.posts.services',['firebase','ui.router']);
-
 // This factory retrieves all posts on the front page.
-angular.module('IMapp.posts.services').factory('frontPagePosts',['$firebaseArray',function($firebaseArray){
+angular.module('postModule').factory('frontPagePosts',['$firebaseArray',function($firebaseArray){
     
     console.log("Retrieving posts on the front page.");
     
@@ -59,7 +57,7 @@ angular.module('IMapp.posts.services').factory('frontPagePosts',['$firebaseArray
 
 
 // This Factory retrieves a single post by ID. Lucas pls write this idk how to Fyrbaze.
-angular.module('IMapp.posts.services').factory('getSinglePost',['$firebaseObject', '$stateParams' ,function($firebaseObject, $stateParams){
+angular.module('postModule').factory('getSinglePost',['$firebaseObject', '$stateParams' ,function($firebaseObject, $stateParams){
     
 
     console.log("Retrieving single post by ID: "+ $stateParams.ID);

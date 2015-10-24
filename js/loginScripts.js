@@ -4,7 +4,7 @@ angular.module('loginModule').config(['$stateProvider', '$locationProvider', fun
 
     $stateProvider.state('loginPage', {
         url: '/loginindex',
-        templateUrl: 'loginindex.html',
+        templateUrl: '../views/loginPage.html',
         controller: 'LoginController'
     });
     

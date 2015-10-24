@@ -1,26 +1,26 @@
 
 // Module initialization.
-angular.module('homeModule', ['firebase', 'ui.router', 'postsModule']);
+angular.module('homeModule', ['firebase', 'ui.router']);
 
 angular.module('homeModule').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
     $stateProvider.state('homePage', {
         url: '/home',
-        templateUrl: 'home.html',
+        templateUrl: '../views/homePage.html',
         controller:'HomeController'
     });
     $stateProvider.state('homePage.allPosts', {
         url: '/posts',
-        templateUrl: 'modules/posts/views/posts.html',
+        templateUrl: '../views/postsPage.html',
         controller: 'PostController',
     });
     $stateProvider.state('homePage.singlePost', {
         url: '/posts/:ID',
-        templateUrl: 'modules/posts/views/singlePost.html',
+        templateUrl: '../views/singlePostPage.html',
         controller: 'PostDetailsController'
     });
      $stateProvider.state('homePage.createPost', {
         url: '/submit',
-        templateUrl: 'modules/posts/views/createPost.html',
+        templateUrl: '../views/createPostPage.html',
         controller: 'PostController'
     });
 }]);
@@ -76,9 +76,6 @@ app.controller('ChatController',['$scope','publicChatMessages',
 		}
 	}
 ]);
-
-
-var app = angular.module('homeModule');
 
 // Returns an array containing all messages in the public chat.
 app.factory('publicChatMessages', ['$firebaseArray', 
