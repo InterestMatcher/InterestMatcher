@@ -5,23 +5,19 @@
         <a class="submitNewPostButton" ui-sref="homePage.createPost"> Submit a Post </a>       
         
     </div>
-    
+
     <div class="postListArea">
         
-        <div class="postList" 
+        <div class="postList">
             <div ng-repeat="post in posts">
                 <div class="postSpacer">
                     <div id="postTitle"><a ui-sref="homePage.singlePost({ID:getID(post)})">{{post.title}} </a></div>
                     <div id="postMisc">Posted by</div>
-                    <div id="postAuthor"> {{post.author}} </div>
+                    <div id="postAuthor"> <a href="#">{{post.author}} </a></div>
                     on 
                     <div id="postDate"> {{post.date | date: 'medium'}}</div>           
-                        
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </div>

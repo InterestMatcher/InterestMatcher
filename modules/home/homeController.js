@@ -22,6 +22,7 @@ app.controller('ChatController',['$scope','publicChatMessages',
 
 		$scope.facebookID = fullID.substring(fbString.length,fullID.length);
 		console.log("Just the ID:"  + $scope.facebookID);
+		
 		// Function used to add a new post.
 		$scope.addMessage = function(){
 
@@ -32,6 +33,13 @@ app.controller('ChatController',['$scope','publicChatMessages',
 
 			});
 
+			// empty the text box when submitted
+			document.getElementById("chatBoxContent").value = '';
+			
+			// attempts to scoll to bottom of chat when chats are sumbitted
+			var objDiv = document.getElementById("chatPane");
+			objDiv.scrollTop = objDiv.scrollHeight;
+			
 			console.log('Data sent?');
 			// Reset title and content.
 			//$scope.newPostTitle = '';
