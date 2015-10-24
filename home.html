@@ -33,12 +33,12 @@
             
             <div class="chatSpacer"></div>
     
-            <div>
+            <div id="chatPane">
                 <div=class="postList" ng-repeat="message in messages">
                     <div id="userName">{{message.author}}</div>
                     <div id="message">{{message.content}}</div>
                 </div>
-    
+                
                 <form ng-submit="addMessage()">
                     <input type="text" ng-model="message" id="chatBoxContent">
                     <input type="submit" value="Send">
