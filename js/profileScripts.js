@@ -1,5 +1,7 @@
 
-var profileApp = angular.module('profileApp', ["xeditable"])
+angular.module('profileModule',['xeditable']);
+
+var profileApp = angular.module('profileModule');
 
 profileApp.controller('ProfileController', function($scope) {
     $scope.samplePerson = {
