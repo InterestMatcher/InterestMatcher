@@ -23,6 +23,11 @@ angular.module('homeModule').config(['$stateProvider', '$locationProvider', func
         templateUrl: '../views/createPostPage.html',
         controller: 'PostController'
     });
+     $stateProvider.state('homePage.openProfile', {
+     	url: '/profile',
+     	templateUrl: '../views/userAccountPage.html',
+     	controller: 'ProfileController'
+     });
 }]);
 // End of module stuff.
 
