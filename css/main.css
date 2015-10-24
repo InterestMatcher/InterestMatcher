@@ -19,6 +19,14 @@ html, body {
 	position:relative;
 	height:70px;
 	background-color:  white;
+}
+
+.bannerDivider{
+	position: relative;
+	height:100px;
+	width: auto;
+	left: 210px;
+	background-color: black;
 	border-width: 0px;
 	border-bottom: 5px;
 	border-style: solid;
@@ -41,14 +49,30 @@ html, body {
 	border-color: #5FBAFF;
 }
 
-.buttonSpacer{
-	position:absolute;
+.buttonSpacer1, .buttonSpacer2, .buttonSpacer3, .buttonSpacer4{
+	position: absolute;
 	width: 50px;
 	height: 50px;
 	background-color: white;
-	margin-left: 5px;
-	margin-top: 5px;
+	margin-left: 15px;
+	margin-top: 10px;
 	margin-right: 5px;
+	border-width: 0px;
+	border-top-width: 10px;
+	border-style: solid;
+	border-color: #e47c1e;
+}
+
+.buttonSpacer2{
+	left: 60px;
+}
+
+.buttonSpacer3{
+	left: 120px;
+}
+
+.buttonSpacer4{
+	left: 180px;
 }
 
 #banner{
@@ -148,11 +172,6 @@ body{
 	border-color: #BBE1FF;
 }
 
-.postList{
-	margin-bottom: 10px;
-}
-
-
 .fb-button{
 	position: relative;
 	width: 210px;
@@ -171,9 +190,9 @@ body{
 }
 
 .postSpacer{
-	margin-top: 5px;
 	margin-right: 15px;
 	margin-left: 15px;
+	margin-bottom: 5px;
 	border-width: 1px;
 	background-color: #EBF6FF;
 	border-style: solid;
@@ -187,6 +206,7 @@ body{
 	color: #0E94FB;
 	font-size: 20px;
 	font-weight: bold; 
+	text-decoration: none;
 }
 
 #postMisc{
@@ -203,4 +223,90 @@ body{
 #postDate{
 	font-size: 12px;
 	display: inline;
+}
+
+.postOptions{
+	position: absolute;
+}
+
+.postListArea{
+	position: relative;
+	margin-left: 210px;
+	border-left-style: solid;
+	border-left-width: 5px;
+	border-left-color: #5FBAFF;
+}
+
+.postList{
+	position: relative;
+	top: 15px;
+}
+
+.singlePostInfo{
+	font-size:32px;
+}
+
+.singlePostContent{
+	font-size: 18px;
+	background-color: #EBF6FF;
+	margin-left: 15px;
+	margin-right: 15px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #5FBAFF;
+}
+
+
+.submitNewPostButton{
+	position:  absolute;
+	margin-top: 15px;
+	margin-left: 27px;
+	width: 150px;
+	height: 40px;
+	background-color: #e47c1e;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 40px;
+	text-decoration:none;
+}
+
+
+    .myButton {
+	-moz-box-shadow:inset 0px 0px 17px 0px #54a3f7;
+	-webkit-box-shadow:inset 0px 0px 17px 0px #54a3f7;
+	box-shadow:inset 0px 0px 17px 0px #54a3f7;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+	background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+	background-color:#007dc1;
+	border:1px solid #2391db;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:5px 8px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #154682;
+  width: 150px;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+	background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+	background-color:#0061a7;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }

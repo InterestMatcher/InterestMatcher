@@ -1,58 +1,27 @@
 
 <div ng-controller="PostController">
-    <style>
-    .myButton {
-	-moz-box-shadow:inset 0px 0px 17px 0px #54a3f7;
-	-webkit-box-shadow:inset 0px 0px 17px 0px #54a3f7;
-	box-shadow:inset 0px 0px 17px 0px #54a3f7;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
-	background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-	background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-	background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-	background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
-	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
-	background-color:#007dc1;
-	border:1px solid #2391db;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:14px;
-	padding:5px 8px;
-	text-decoration:none;
-	text-shadow:0px 0px 0px #154682;
-}
-.myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
-	background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-	background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-	background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-	background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
-	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
-	background-color:#0061a7;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-
     
-    </style>
+    <div class="postOptions">
+        <a class="submitNewPostButton" ui-sref="homePage.createPost"> Submit a Post </a>       
+        
+    </div>
     
-    
-    <div ng-repeat="post in posts">
-        <div class="postSpacer">
-            <div id="postTitle"><a ui-sref="homePage.singlePost({ID:getID(post)})">{{post.title}} </a></div>
-            <div id="postMisc">Posted by</div>
-            <div id="postAuthor"> {{post.author}} </div>
-            on 
-            <div id="postDate"> {{post.date | date: 'medium'}}</div>           
-               
+    <div class="postListArea">
+        
+        <div class="postList" 
+            <div ng-repeat="post in posts">
+                <div class="postSpacer">
+                    <div id="postTitle"><a ui-sref="homePage.singlePost({ID:getID(post)})">{{post.title}} </a></div>
+                    <div id="postMisc">Posted by</div>
+                    <div id="postAuthor"> {{post.author}} </div>
+                    on 
+                    <div id="postDate"> {{post.date | date: 'medium'}}</div>           
+                        
+                </div>
+            </div>
         </div>
     </div>
-    <a class="myButton" ui-sref="homePage.createPost"> Submit A Post </a>
+
 
 
 </div>
