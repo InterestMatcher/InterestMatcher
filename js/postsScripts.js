@@ -28,6 +28,7 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
     }    
     
     $scope.getID = function(post){
+        console.log(post);
         return post.ID;        
     }
     
