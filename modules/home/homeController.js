@@ -32,6 +32,9 @@ app.controller('ChatController',['$scope','publicChatMessages',
 
 			});
 
+			// empty the text box when submitted
+			document.getElementById("chatBoxContent").value = '';
+			
 			console.log('Data sent?');
 			// Reset title and content.
 			//$scope.newPostTitle = '';
