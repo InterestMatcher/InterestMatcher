@@ -1,6 +1,4 @@
-
 angular.module('postModule', ['ui.router', 'firebase']);
-
 
 angular.module('postModule').controller('PostController', ['$scope','$stateParams', 'frontPagePosts', '$state',function ($scope,$stateParams,frontPagePosts, $state){
     $scope.posts = frontPagePosts;
@@ -42,27 +40,22 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
     $scope.singlePost = getSinglePost;
     console.log($scope.singlePost.author);
     
-    
-    
 }]);
 
 // This factory retrieves all posts on the front page.
 angular.module('postModule').factory('frontPagePosts',['$firebaseArray',function($firebaseArray){
-    
     console.log("Retrieving posts on the front page.");
-    
-    var ref = new Firebase('https://interestmatcher.firebaseio.com/posts/chill');
-    
-    return $firebaseArray(ref);
+    return $firebaseArray(new Firebase('https://interestmatcher.firebaseio.com/posts/chill'));
 }]);
 
 
 // This Factory retrieves a single post by ID. Lucas pls write this idk how to Fyrbaze.
 angular.module('postModule').factory('getSinglePost',['$firebaseObject', '$stateParams' ,function($firebaseObject, $stateParams){
-    
+
+    // Get ID from url.
     var url = document.location.href;
     console.log("url:"+url);
-    var useless ="https://interestmatcher.firebaseapp.com/#/home/posts/";
+    var removablePartOfUrl ="https://interestmatcher.firebaseapp.com/#/home/posts/";
     var id  = url.substring(useless.length - 1);
 
     console.log("Retrieving single post by ID: "+ id);

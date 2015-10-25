@@ -10,24 +10,11 @@ angular.module('loginModule').config(['$stateProvider', '$locationProvider', fun
     
 }]);
 
-/*
-  Allows for login via facebook.
-
-  Created by: Lucas Message (09/28/2015)
-
-  EDITS (Name, date and change):
-    - Will Robbins, 9/30/2015, Fixed (I'm fairly sure) the problem of data not persisting between logins.
-
-*/
+// ------------------ Controller for login-----------------------//
 
 var app = angular.module('loginModule');
-
-
 var isExistingUser = false;
-
 var mainRef = new Firebase("https://interestmatcher.firebaseio.com/");
-
-// ------------------ Controller for login-----------------------//
 
 // Use this controller with buttons and call the function "authFB()" with ng-click.
 app.controller('LoginController', ["$scope", '$state', function($scope, $state){
