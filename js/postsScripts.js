@@ -60,10 +60,14 @@ angular.module('postModule').factory('frontPagePosts',['$firebaseArray',function
 // This Factory retrieves a single post by ID. Lucas pls write this idk how to Fyrbaze.
 angular.module('postModule').factory('getSinglePost',['$firebaseObject', '$stateParams' ,function($firebaseObject, $stateParams){
     
+    var url = document.location.href;
+    console.log("url:"+url);
+    var useless ="https://interestmatcher.firebaseapp.com/#/home/posts/";
+    var id  = url.substring(useless.length - 1);
 
-    console.log("Retrieving single post by ID: "+ $stateParams.ID);
+    console.log("Retrieving single post by ID: "+ id);
     
-    var ref = new Firebase('https://interestmatcher.firebaseio.com/posts/chill/'+$stateParams.ID+"/");
+    var ref = new Firebase('https://interestmatcher.firebaseio.com/posts/chill/'+id+"/");
     var array =  $firebaseObject(ref);
     
     array.$loaded().then(function(){
