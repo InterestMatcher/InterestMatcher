@@ -47,8 +47,6 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 app.controller('ChatController',['$scope','publicChatMessages',
 	function($scope, publicChatMessages){
 
-		console.log('psst');
-
 		$scope.messages = publicChatMessages;
 
 		var fullID = mainRef.getAuth().uid;
@@ -57,15 +55,15 @@ app.controller('ChatController',['$scope','publicChatMessages',
 		$scope.facebookID = fullID.substring(fbString.length,fullID.length);
 		console.log("Just the ID:"  + $scope.facebookID);
 		
-		// Function used to add a new post.
-		$scope.addMessage = function(){
-
-			$scope.messages.$add({
-				author: mainRef.getAuth().facebook.displayName,
-				content: $scope.message,
-				facebookID: $scope.facebookID,
-
-			});
+		if(isValidChat($scope.message))  {
+			// Function used to add a new post.
+			$scope.addMessage = function(){
+				$scope.messages.$add({
+					author: mainRef.getAuth().facebook.displayName,
+					content: sanitizeChatInput($scope.message),
+					facebookID: $scope.facebookID,
+				});
+		}
 
 			// empty the text box when submitted
 			document.getElementById("chatBoxContent").value = '';
@@ -101,3 +99,26 @@ app.factory('publicChatMessages', ['$firebaseArray',
 		return $firebaseArray(ref);
 	}
 ]);
+
+// Checks to see whether or not a chat input is valid and should be rejected or accepted & sanitized
+// @param String input
+// @return boolean isValid
+// @author whrobbins
+function isValidChat(input)  {
+	if(input === "")
+		return false;
+	if(input.length > 141) // Let's just say we've 1-up'ed Twitter
+		return false;
+	// TODO: add logic to return false if the new chat will be a duplicate of the last chat
+		
+	return true;
+}
+
+
+// Prevents users from chatting huge strings, empty strings, same string twice, etc
+// @param String input: the unsanitized string to be processed
+// @return the sanitized chat ready for sumbission
+// @author whrobbins
+function sanitizeChatInput(input)  {
+	// Currently replaced by isValidChat.  Edit to add any changes to user input
+}
