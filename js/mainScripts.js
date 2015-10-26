@@ -58,14 +58,15 @@ app.controller('ChatController',['$scope','publicChatMessages',
 		console.log("Facebook ID:"  + $scope.facebookID);
 		
 		// Adds a new post if the chat box input is valid
-		if(isValidChat($scope.message))  {
-			$scope.addMessage = function(){
+		$scope.addMessage = function(){
+			if(isValidChat($scope.message))  {
 				$scope.messages.$add({
 					author: mainRef.getAuth().facebook.displayName,
 					content: sanitizeChatInput($scope.message),
 					facebookID: $scope.facebookID,
 				});
-		}
+			
+
 
 			// empty the text box when submitted
 			document.getElementById("chatBoxContent").value = '';
@@ -77,7 +78,8 @@ app.controller('ChatController',['$scope','publicChatMessages',
 			console.log('Chat sumbit method has run');
 			// Reset title and content.
 			//$scope.newPostTitle = '';
-			$scope.post = '';
+			$scope.message = '';
+			}
 		}
 	}
 ]);
@@ -117,4 +119,5 @@ function isValidChat(input)  {
 // @author whrobbins
 function sanitizeChatInput(input)  {
 	// Currently replaced by isValidChat.  Edit to add any changes to user input
+	return input;
 }
