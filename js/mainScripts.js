@@ -93,7 +93,7 @@ app.factory('publicChatMessages', ['$firebaseArray',
 		var userID = mainRef.getAuth().uid;
 
 		console.log('userID: ' + userID);
-		console.log('User post data retrieved?');
+		console.log('Chat message data retrieved?');
 		return $firebaseArray(new Firebase('https://interestmatcher.firebaseio.com/chatrooms/public'));
 	}
 ]);

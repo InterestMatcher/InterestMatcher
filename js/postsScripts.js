@@ -2,7 +2,12 @@ angular.module('postModule', ['ui.router', 'firebase']);
 
 angular.module('postModule').controller('PostController', ['$scope','$stateParams', 'frontPagePosts', '$state',function ($scope,$stateParams,frontPagePosts, $state){
     $scope.posts = frontPagePosts;
-    
+    $scope.posts.$loaded().then(function(){
+        console.log("Number of elements in posts:" + $scope.posts.length)
+
+        $scope.noPostsAvailableMessage = ""
+    });
+
     var ref = new Firebase("https://interestmatcher.firebaseio.com/posts/chill");
     var id = 0;
     
@@ -21,8 +26,10 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
            console.log("added record with id " + id);
            $stateParams.ID = id;
            console.log("Is state params right?: " + $stateParams.ID)
-           $state.go('homePage.singlePost');
+           //$state.go('homePage.singlePost');
        })
+
+      $state.go('homePage.allPosts');
     }    
     
     $scope.getID = function(post){
@@ -56,7 +63,7 @@ angular.module('postModule').factory('getSinglePost',['$firebaseObject', '$state
     var url = document.location.href;
     console.log("url:"+url);
     var removablePartOfUrl ="https://interestmatcher.firebaseapp.com/#/home/posts/";
-    var id  = url.substring(useless.length - 1);
+    var id  = url.substring(removablePartOfUrl.length - 1);
 
     console.log("Retrieving single post by ID: "+ id);
     
