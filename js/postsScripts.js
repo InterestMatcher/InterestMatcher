@@ -36,6 +36,11 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
         console.log(post);
         return post.ID;        
     }
+
+    $scope.goToPost = function(id){
+      console.log("Redirecting to post of ID:" + id);
+      $state.go("homePage.singlePost", {ID:id});
+    }
     
 
 }]).controller('PostDetailsController', ['$state', '$scope' ,'$stateParams', 'getSinglePost',function ($state, $scope, $stateParams, getSinglePost) {
@@ -44,7 +49,7 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
         $state.go('homePage.allPosts');
     };
     
-    $scope.singlePost = getSinglePost;
+    $scope.singlePost = getSinglePost.getData($stateParams.ID);
     console.log($scope.singlePost.author);
     
 }]);
@@ -55,24 +60,21 @@ angular.module('postModule').factory('frontPagePosts',['$firebaseArray',function
     return $firebaseArray(new Firebase('https://interestmatcher.firebaseio.com/posts/chill'));
 }]);
 
-
 // This Factory retrieves a single post by ID. Lucas pls write this idk how to Fyrbaze.
 angular.module('postModule').factory('getSinglePost',['$firebaseObject', '$stateParams' ,function($firebaseObject, $stateParams){
 
-    // Get ID from url.
-    var url = document.location.href;
-    console.log("url:"+url);
-    var removablePartOfUrl ="https://interestmatcher.firebaseapp.com/#/home/posts/";
-    var id  = url.substring(removablePartOfUrl.length - 1);
+    var service = {
 
-    console.log("Retrieving single post by ID: "+ id);
+      getData:  function(id){
+          console.log("Retrieving single post by ID: "+ id);
     
-    var ref = new Firebase('https://interestmatcher.firebaseio.com/posts/chill/'+id+"/");
-    var array =  $firebaseObject(ref);
-    
-    array.$loaded().then(function(){
-       console.log("Author:" + array.author); 
-    });
+          var ref = new Firebase('https://interestmatcher.firebaseio.com/posts/chill/'+$stateParams.ID+"/");
+          var array = $firebaseObject(ref);
+          return array;
+      }
+    }
 
-    return array;
+    return service;
+
+   
 }]);
