@@ -1,9 +1,17 @@
+/*
+
+  This file contains all the code for logging in, which is used in the login page.
+
+*/
+
+// Module used when dealing with login stuff.
 angular.module('loginModule', ['firebase', 'ui.router']);
 
+// Sets up a view for the login screen.
 angular.module('loginModule').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
 
     $stateProvider.state('loginPage', {
-        url: '/loginindex',
+        url: '/login',
         templateUrl: '../views/loginPage.html',
         controller: 'LoginController'
     });
