@@ -8,7 +8,7 @@
 */
 
 // The module used by all things related to posts.
-angular.module('postModule', ['ui.router', 'firebase']);
+angular.module('postModule', ['ui.router', 'firebase', 'luegg.directives']);
 
 // This controller is responsible for displaying the home page list of posts.
 angular.module('postModule').controller('PostController', ['$scope','$stateParams', 'frontPagePosts', '$state',function ($scope,$stateParams,frontPagePosts, $state){

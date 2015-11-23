@@ -1,0 +1,28 @@
+
+.topNavigationBar{
+  background-color: black;
+  font-size: 14px;
+  color:lightgray;
+}
+
+.navigationBarButtonList{
+  display: flex;
+  list-style: none;
+}
+
+.navigationBarButtonList li{
+  padding: 10px;
+  border-right: solid black;
+  background: linear-gradient(black, #4d4d4d);
+}
+
+.navigationBarButtonList li:hover{
+  background: linear-gradient(black, #666666);
+}
+
+.loginNavigationBar{
+  background: darkgray;
+  font-size: 12px;
+  text-align: right;
+  padding: 2px;
+}

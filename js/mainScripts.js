@@ -1,16 +1,16 @@
 
 // Module initialization.
-angular.module('homeModule', ['firebase', 'ui.router']);
+angular.module('homeModule', ['firebase', 'ui.router', 'luegg.directives']);
 
 angular.module('homeModule').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
     $stateProvider.state('homePage', {
         url: '/home',
-        templateUrl: '../views/homePage.html',
+        templateUrl: '../views/newHomePage.html',
         controller:'HomeController'
     });
     $stateProvider.state('homePage.allPosts', {
         url: '/posts',
-        templateUrl: '../views/postsPage.html',
+        templateUrl: '../views/newPostsPage.html',
         controller: 'PostController',
     });
     $stateProvider.state('homePage.singlePost', {
@@ -50,6 +50,8 @@ app.controller('ChatController',['$scope','publicChatMessages',
 	function($scope, publicChatMessages){
 
 		$scope.messages = publicChatMessages;
+
+		$scope.glued = true;
 
 		var fullID = mainRef.getAuth().uid;
 		var fbString = "facebook:";

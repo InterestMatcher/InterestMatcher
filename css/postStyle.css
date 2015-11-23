@@ -1,0 +1,35 @@
+
+.postElement:hover{
+  margin-left: 110px;
+  background-color: #fff0e5;
+  transition:  .2s ease-in-out;
+}
+
+.postElement{
+  position: relative;
+  margin: 5px;
+  margin-left: 100px;
+  border: solid 1px lightgray;
+  padding: 5px 10px 5px 10px;
+}
+
+#postAuthor{
+  color: orangered;
+}
+
+#postAuthor, #postDate{
+  font-size: 12px;
+  display: inline;
+}
+
+#postTitle{
+  position: relative;
+  color: orangered;
+  font-weight:bold;
+  font-size: 20px;
+}
+
+#postContent{
+  background: linear-gradient(white, #f2f2f2);
+  padding: 10px;
+}

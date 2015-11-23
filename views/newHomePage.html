@@ -1,0 +1,40 @@
+<!-- This is the main page of the website. Everything is inside of this page. -->
+
+<!-- The navigation bar is at the top of the page and it contains buttons for important pages. -->
+<div class="topNavigationBar">
+	
+	<u1 class="navigationBarButtonList">
+		<li><a>Home</a></li>
+		<li><a>Around me</a></li>
+		<li><a>My Account</a></li>
+	</u1>
+
+</div>
+
+<!-- This is the small bar at the top that contains login status. -->
+<div class="loginNavigationBar">
+	You are logged in as: {{user.name}} 
+</div>
+
+<!-- This is the content area, where the view changes depending on where you are on the website. -->
+<div class="contentArea">
+	<div ui-view></div>
+</div>
+
+<!-- This is the chat area, which is always on the right side of the screen. -->
+<div class="chatArea" ng-controller="ChatController" scroll-glue="glued">
+        
+		<div class="messageArea">
+	        <div class="chatMessageElement" ng-repeat="message in messages">
+	            <div id="chatName">{{message.author}}</div>
+	            <div id="chatMessage">{{message.content}}</div>
+	        </div>
+        </div>
+
+        <form ng-submit="addMessage()" class="submitChatMessageInputBox">
+            <input type="text" ng-model="message" id="chatTextBox">
+            <input type="submit" value="Send" id="chatSubmitButton">
+        </form>
+        
+    </div>
+</div>
