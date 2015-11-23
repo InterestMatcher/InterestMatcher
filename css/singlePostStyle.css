@@ -1,21 +1,20 @@
-
-.postElement:hover{
+/* Styling for when user clicks on a post. */
+.singlePostContainer:hover{
   margin-left: 10px;
   background-color: #ccecff;
   transition:  .2s ease-in-out;
 }
 
-.postElement{
+.singlePostContainer{
   position: relative;
   margin: 5px;
   border: solid 1px lightgray;
-  border-radius: 10px;
   padding: 5px 10px 5px 10px;
   display: inline-block;
   width: calc(100% - 180px);
 }
 
-#postPicture{
+#singlePostPicture{
   position: relative;
   top: 17px;
   margin-left: 5px;
@@ -24,24 +23,23 @@
   display: inline;
 }
 
-#postAuthor:hover, #postTitle:hover{
+#singlePostAuthor:hover, #singlePostAuthor:hover{
   text-decoration: underline;
   cursor: pointer;
 }
 
-#postAuthor, #postDate{
+#singlePostAuthor, #singlePostDate{
   font-size: 12px;
   display: inline;
 }
 
-#postTitle{
+#singlePostTitle{
   position: relative;
   font-weight:bold;
   font-size: 20px;
 }
 
-#postContent{
+#singlePostContent{
   background: linear-gradient(white, #e5f5ff);
   padding: 10px;
-  border-radius: 10px;
 }

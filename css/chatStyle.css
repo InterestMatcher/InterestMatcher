@@ -56,10 +56,6 @@
   margin-top: 4px;
 }
 
-#chatName{
-  color: orangered;
-}
-
 #chatMessage, #chatName{
   display: inline;
   word-wrap:  break-word;

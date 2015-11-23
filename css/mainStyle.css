@@ -8,7 +8,7 @@
 /* Colors */
 
 /* Default Blue */
-#postTitle, #postAuthor, #chatName{
-	color: orangered;
+#postTitle, #postAuthor, #chatName, #singlePostAuthor, #singlePostTitle{
+	color: #0099ff;
 }
 

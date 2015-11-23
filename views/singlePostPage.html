@@ -1,11 +1,19 @@
 <div>
-    <div class="singlePostInfo">
-               
-        <div id="singPostTitle">{{singlePost.title}}</div>
-        <div id="singlePostAuthor">Created by: {{singlePost.author}}</div>
-        <div id="singlePostDate">Posted on {{singlePost.date}}</div>      
+	<div id="singlePostPicture">
+        <img src="http://graph.facebook.com/{{post.authorID}}/picture?type=normal" 
+        	 alt="Image not found" onError="this.src='http://40.media.tumblr.com/gWpDRTzE5o5evhxyQMEpPfaro1_100.png';"/>
+    </div>
+
+    <div class="singlePostContainer">
+
+        <div id="singlePostTitle">{{singlePost.title}}</div>
+        <div id="singlePostDate">Posted on {{singlePost.date | date:'medium'}} by </div>
+        <div id="singlePostAuthor">{{singlePost.author}}</div>
+    	<div id="singlePostContent">{{singlePost.content}}</div>
         
     </div>
-    
-    <div class="singlePostContent">{{singlePost.content}}</div>
+
+    <div class="commentsContainer">
+
+    </div>
 </div>
