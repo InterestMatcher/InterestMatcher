@@ -6,3 +6,9 @@
 }
 
 /* Colors */
+
+/* Default Blue */
+#postTitle, #postAuthor, #chatName{
+	color: orangered;
+}
+

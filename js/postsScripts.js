@@ -30,11 +30,16 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
     // NOTE: All posts are saved to /chill, but in the future, they will also be saved in their interest group.
     var ref = new Firebase("https://interestmatcher.firebaseio.com/posts/chill");
     var id = 0;
-    
+
+    var facebookID = ref.getAuth().uid;
+    facebookID = facebookID.substring(9);
+    console.log("The facebook ID for this user is: "+facebookID);
+
     // The function used in the scope to add a post.
     $scope.addPost = function(){
         $scope.posts.$add({
             author: ref.getAuth().facebook.displayName,
+            authorID: facebookID,
             title: $scope.title,
             date: new Date().toJSON(),
             content: $scope.content,

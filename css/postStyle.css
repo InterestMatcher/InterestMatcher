@@ -1,6 +1,6 @@
 
 .postElement:hover{
-  margin-left: 110px;
+  margin-left: 10px;
   background-color: #fff0e5;
   transition:  .2s ease-in-out;
 }
@@ -8,13 +8,28 @@
 .postElement{
   position: relative;
   margin: 5px;
-  margin-left: 100px;
   border: solid 1px lightgray;
   padding: 5px 10px 5px 10px;
+  display: inline-block;
+  width: calc(100% - 180px);
+}
+
+#postPicture{
+  position: relative;
+  top: 17px;
+  margin-left: 5px;
+  max-width: 50px;
+  max-height: 50px;
+  display: inline;
 }
 
 #postAuthor{
   color: orangered;
+}
+
+#postAuthor:hover, #postTitle:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 #postAuthor, #postDate{

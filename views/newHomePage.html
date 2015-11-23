@@ -12,8 +12,8 @@
 </div>
 
 <!-- This is the small bar at the top that contains login status. -->
-<div class="loginNavigationBar">
-	You are logged in as: {{user.name}} 
+<div class="loginNavigationBar" ng-controller="HomeController">
+	{{getLoginMessage()}}
 </div>
 
 <!-- This is the content area, where the view changes depending on where you are on the website. -->

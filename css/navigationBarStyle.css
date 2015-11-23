@@ -3,6 +3,7 @@
   background-color: black;
   font-size: 14px;
   color:lightgray;
+  width: calc(100% - 400px);
 }
 
 .navigationBarButtonList{
@@ -18,11 +19,14 @@
 
 .navigationBarButtonList li:hover{
   background: linear-gradient(black, #666666);
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .loginNavigationBar{
   background: darkgray;
   font-size: 12px;
   text-align: right;
-  padding: 2px;
+  padding: 2px 10px 2px 0px;
+  width: calc(100% - 404px);
 }

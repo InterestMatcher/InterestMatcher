@@ -43,6 +43,20 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 		$state.go('loginPage');
 	}
     $state.go('homePage.allPosts');
+
+		// Sets the username.
+	$scope.username = mainRef.getAuth().facebook.displayName;
+	$scope.getLoginMessage = function(){
+		if (!mainRef.getAuth()){
+			console.log("Username null.");
+			return "You are not logged in.";
+		}
+		else {
+			console.log("Username is not null");
+			return "You are logged in as "+ $scope.username;
+		}
+	}
+		
 	
 }]);
 
@@ -63,7 +77,7 @@ app.controller('ChatController',['$scope','publicChatMessages',
 		$scope.addMessage = function(){
 			if(isValidChat($scope.message))  {
 				$scope.messages.$add({
-					author: mainRef.getAuth().facebook.displayName,
+					author: $scope.username,
 					content: sanitizeChatInput($scope.message),
 					facebookID: $scope.facebookID,
 				});
