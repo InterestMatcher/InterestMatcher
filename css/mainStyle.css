@@ -1,0 +1,20 @@
+/* Main CSS Stylesheet that contains all elements in the website */
+
+*{
+  margin:0px;
+  font-family: 'Open Sans';
+}
+
+/* Colors */
+
+/* Default Blue */
+#postTitle, #postAuthor, #chatName, #singlePostAuthor, #singlePostTitle{
+	color: #0099ff;
+}
+
+#mapContainer(
+  width: 200px;
+  height: 200px;
+  position: absolute;
+)
+

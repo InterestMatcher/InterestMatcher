@@ -1,0 +1,27 @@
+<!-- This is the view in which the posts are shown. -->
+
+<div class="postsArea">
+
+	<div ng-repeat="post in posts">
+
+		<div class="postElement">
+			<div id="postPicture">
+	        <img src="http://graph.facebook.com/{{post.authorID}}/picture?type=normal" 
+	        	 alt="Image not found" onError="this.src='http://40.media.tumblr.com/gWpDRTzE5o5evhxyQMEpPfaro1_100.png';"/>
+	        </div>
+
+			<div class="postInfo">
+
+	            <div id="postTitle" ng-click="goToPost(getID(post))">{{post.title}}</div>
+
+	            <div id="postDate">Posted on: {{post.date | date: 'medium'}} by</div>
+	            <div id="postAuthor"><a>{{post.author}}</a></div>
+
+	            <div id="postContent">{{post.content}}</div>
+
+			</div>
+		</div>
+		
+	</div>
+
+</div>

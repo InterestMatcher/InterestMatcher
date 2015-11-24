@@ -1,16 +1,16 @@
 
 // Module initialization.
-angular.module('homeModule', ['firebase', 'ui.router']);
+angular.module('homeModule', ['firebase', 'ui.router', 'luegg.directives']);
 
 angular.module('homeModule').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
     $stateProvider.state('homePage', {
         url: '/home',
-        templateUrl: '../views/homePage.html',
+        templateUrl: '../views/newHomePage.html',
         controller:'HomeController'
     });
     $stateProvider.state('homePage.allPosts', {
         url: '/posts',
-        templateUrl: '../views/postsPage.html',
+        templateUrl: '../views/newPostsPage.html',
         controller: 'PostController',
     });
     $stateProvider.state('homePage.singlePost', {
@@ -28,6 +28,12 @@ angular.module('homeModule').config(['$stateProvider', '$locationProvider', func
      	templateUrl: '../views/userAccountPage.html',
      	controller: 'ProfileController'
      });
+     $stateProvider.state('homePage.map', {
+     	url: '/map',
+     	templateUrl: '../views/mapPage.html',
+     	controller: 'MapController'
+     });
+
 }]);
 // End of module initialization.
 
@@ -43,6 +49,20 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 		$state.go('loginPage');
 	}
     $state.go('homePage.allPosts');
+
+		// Sets the username.
+	$scope.username = mainRef.getAuth().facebook.displayName;
+	$scope.getLoginMessage = function(){
+		if (!mainRef.getAuth()){
+			console.log("Username null.");
+			return "You are not logged in.";
+		}
+		else {
+			console.log("Username is not null");
+			return "You are logged in as "+ $scope.username;
+		}
+	}
+		
 	
 }]);
 
@@ -50,6 +70,8 @@ app.controller('ChatController',['$scope','publicChatMessages',
 	function($scope, publicChatMessages){
 
 		$scope.messages = publicChatMessages;
+
+		$scope.glued = true;
 
 		var fullID = mainRef.getAuth().uid;
 		var fbString = "facebook:";
@@ -61,7 +83,7 @@ app.controller('ChatController',['$scope','publicChatMessages',
 		$scope.addMessage = function(){
 			if(isValidChat($scope.message))  {
 				$scope.messages.$add({
-					author: mainRef.getAuth().facebook.displayName,
+					author: $scope.username,
 					content: sanitizeChatInput($scope.message),
 					facebookID: $scope.facebookID,
 				});

@@ -1,0 +1,51 @@
+.postElement{
+  overflow: auto;
+  margin: 5px;
+}
+
+.postInfo:hover{
+  width: calc(100% - 140px);
+  background-color: #ccecff;
+  transition:  .2s ease-in-out;
+}
+
+
+.postInfo{
+  position: relative;
+  border: solid 1px lightgray;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  display: inline-block;
+  width: calc(100% - 130px);
+  float: right;
+}
+
+#postPicture{
+  position: relative;
+  margin-top: 5px;
+  font-size: 12px;
+  margin-right: 0px;
+  display: inline;
+}
+
+#postAuthor:hover, #postTitle:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#postAuthor, #postDate{
+  font-size: 12px;
+  display: inline;
+}
+
+#postTitle{
+  position: relative;
+  font-weight:bold;
+  font-size: 20px;
+}
+
+#postContent{
+  background: linear-gradient(white, #e5f5ff);
+  padding: 10px;
+  border-radius: 10px;
+}

@@ -1,0 +1,62 @@
+
+.chatArea, .contentArea{
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 400px);
+}
+.chatArea{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  float: right;
+  width: 380px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-size: 13px;
+  height: 100%;
+}
+
+.messageArea{
+  scroll-behavior: auto;
+  height: calc(100% - 50px);
+  overflow-y:scroll;
+}
+
+.submitChatMessageInputBox{
+  display: block;
+  height: 50px;
+}
+
+#chatTextBox{
+  width: calc(100% - 100px);
+}
+
+#chatSubmitButton{
+  display: inline;
+  width: 80px;
+}
+
+#chatSubmitButton, #chatTextBox{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+/* This makes the chat disappear when the screen is too small. */
+@media screen and (max-width:1024px){
+ .chatArea{
+    display:none;
+  }
+  .contentArea{
+    width: 100%;
+  }
+}
+
+.chatMessageElement{
+  margin-top: 4px;
+}
+
+#chatMessage, #chatName{
+  display: inline;
+  word-wrap:  break-word;
+}

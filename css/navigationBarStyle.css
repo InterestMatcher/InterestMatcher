@@ -1,0 +1,73 @@
+
+.topNavigationBar{
+  background: linear-gradient(#80ccff,white);
+  font-size: 14px;
+  color:white;
+  width: calc(100% - 400px);
+  height: 50px;
+}
+
+.banner{
+  position: absolute;
+  width: 130px;
+  height: inherit;
+  background-image: url("../assets/logo_low.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.navigationBarButtonList{
+  margin-left: 140px;
+  display: flex;
+  list-style: none;
+}
+
+.navigationBarButtonList li{
+  padding: 10px;
+  border-right: solid #006099;
+  border-bottom: solid #006099 2px;
+  background: linear-gradient(#006cb3,#0099ff);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.navigationBarButtonList li:hover{
+  background: linear-gradient(#0099ff, #80ceff);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.loginNavigationBar{
+  background: linear-gradient(#006cb3,#0099ff);
+  color: white;
+  position: absolute;
+  top: 7px;
+  font-size: 12px;
+  text-align: right;
+  padding: 5px;
+  padding-left: 10px;
+  border-radius: 10px 0px 0px 10px;
+  border-bottom: solid #006099 2px;
+  width: auto;
+  right: 400px;
+}
+
+/* This login status appear in the correct place when the screen is too small. */
+@media screen and (max-width:1024px){
+ .loginNavigationBar{
+    right: 0px;
+  }
+  .topNavigationBar{
+    width: 100%;
+  }
+}
+
+.navigationBarButtonList :nth-child(n+4){
+  background: linear-gradient(#1f7a1f,#33cc33);
+  border-color:#1a651a;
+}
+
+.navigationBarButtonList :nth-child(n+4):hover{
+  background: linear-gradient(#33cc33,#9ae59a);
+  border-color:#1a651a;
+}

@@ -1,0 +1,44 @@
+<!-- This is the main page of the website. Everything is inside of this page. -->
+
+<!-- The navigation bar is at the top of the page and it contains buttons for important pages. -->
+<div class="topNavigationBar">
+	
+	<div class="banner"></div>
+
+	<u1 class="navigationBarButtonList">
+		<li><a ui-sref="homePage.allPosts">Home</a></li>
+		<li><a ui-sref="homePage.profile">Profile</a></li>
+		<li><a ui-sref="homePage.map">Map</a></li>
+		<li><a ui-sref="homePage.submitEvent">Create Event</a></li>
+		<li><a ui-sref="homePage.submitDiscussion">Create Discussion</a></li>
+	</u1>
+
+</div>
+
+<!-- This is the small bar at the top that contains login status. -->
+<div class="loginNavigationBar" ng-controller="HomeController">
+	{{getLoginMessage()}}
+</div>
+
+<!-- This is the content area, where the view changes depending on where you are on the website. -->
+<div class="contentArea">
+	<div ui-view></div>
+</div>
+
+<!-- This is the chat area, which is always on the right side of the screen. -->
+<div class="chatArea" ng-controller="ChatController" scroll-glue="glued">
+        
+		<div class="messageArea">
+	        <div class="chatMessageElement" ng-repeat="message in messages">
+	            <div id="chatName">{{message.author}}</div>
+	            <div id="chatMessage">{{message.content}}</div>
+	        </div>
+        </div>
+
+        <form ng-submit="addMessage()" class="submitChatMessageInputBox">
+            <input type="text" ng-model="message" id="chatTextBox">
+            <input type="submit" value="Send" id="chatSubmitButton">
+        </form>
+        
+    </div>
+</div>

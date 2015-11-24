@@ -8,7 +8,7 @@
 */
 
 // The module used by all things related to posts.
-angular.module('postModule', ['ui.router', 'firebase']);
+angular.module('postModule', ['ui.router', 'firebase', 'luegg.directives']);
 
 // This controller is responsible for displaying the home page list of posts.
 angular.module('postModule').controller('PostController', ['$scope','$stateParams', 'frontPagePosts', '$state',function ($scope,$stateParams,frontPagePosts, $state){
@@ -30,15 +30,19 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
     // NOTE: All posts are saved to /chill, but in the future, they will also be saved in their interest group.
     var ref = new Firebase("https://interestmatcher.firebaseio.com/posts/chill");
     var id = 0;
-    
+
+    var facebookID = ref.getAuth().uid;
+    facebookID = facebookID.substring(9);
+    console.log("The facebook ID for this user is: "+facebookID);
+
     // The function used in the scope to add a post.
     $scope.addPost = function(){
         $scope.posts.$add({
             author: ref.getAuth().facebook.displayName,
+            authorID: facebookID,
             title: $scope.title,
             date: new Date().toJSON(),
             content: $scope.content,
-            comments: {}
         })
         
         // After the post is completely added, this will retrieve the ID of said post and add it to the post information.
@@ -66,11 +70,27 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
     }
     
 // This controller is responsible for the details of a post that the user clicked on.
-}]).controller('PostDetailsController', ['$state', '$scope' ,'$stateParams', 'getSinglePost',function ($state, $scope, $stateParams, getSinglePost) {
+}]).controller('PostDetailsController', ['$state', '$scope' ,'$stateParams', 'getSinglePost', 'getCommentSection' ,function ($state, $scope, $stateParams, getSinglePost, getCommentSection) {
     
     // Retrieves the data of a single post with the id given.
     // The id is always saved to $stateParams when the user clicks on a post.
     $scope.singlePost = getSinglePost.getData($stateParams.ID);
+
+
+    // Variables and functions for comments.
+    var commentSectionRef = new Firebase("https://interestmatcher.firebaseio.com/comments/"+$stateParams.ID);
+
+    $scope.comments = getCommentSection.getData($stateParams.ID);
+
+    // Used to create a new comment.
+    $scope.addComment = function(){
+      $scope.comments.$add({
+          author: mainRef.getAuth().facebook.displayName,
+          authorID: mainRef.getAuth().uid.substring(9),
+          date: new Date().toJSON(),
+          content: $scope.content,
+      });
+    }
 
 }]);
 
@@ -98,6 +118,29 @@ angular.module('postModule').factory('getSinglePost',['$firebaseObject', '$state
           // Make sure that the post is returned as an object, not as an array.
           var post = $firebaseObject(ref);
           return post;
+      }
+    }
+
+    return service;
+
+   
+}]);
+
+angular.module('postModule').factory('getCommentSection',['$firebaseArray', '$stateParams' ,function($firebaseArray, $stateParams){
+
+    // This factory is different from the frontPagePosts factory because the factory does not reload the posts when another post
+    // is clicked on. To FORCE it to always get the post is clicked on, this function is used.
+
+    var service = {
+
+      getData:  function(id){
+
+          console.log("Retrieving comments from post of ID: "+ id);    
+          // The comment section is found on firebase by appending its post's ID to the reference.
+          var ref = new Firebase('https://interestmatcher.firebaseio.com/comments/'+$stateParams.ID+"/");
+          // Make sure that the comments are returned as an array, not as an object.
+          var comments = $firebaseArray(ref);
+          return comments;
       }
     }
 

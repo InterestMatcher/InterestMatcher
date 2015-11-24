@@ -50,6 +50,7 @@ app.controller('LoginController', ["$scope", '$state', function($scope, $state){
         ref.child(authData.uid).update({
           provider: authData.provider,
           name: getName(authData),
+          facebookID: authData.uid,
         })
       } 
       
