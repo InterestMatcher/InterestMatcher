@@ -4,9 +4,20 @@
   font-size: 14px;
   color:white;
   width: calc(100% - 400px);
+  height: 50px;
+}
+
+.banner{
+  position: absolute;
+  width: 130px;
+  height: inherit;
+  background-image: url("../assets/logo_low.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .navigationBarButtonList{
+  margin-left: 140px;
   display: flex;
   list-style: none;
 }
@@ -41,7 +52,7 @@
   right: 400px;
 }
 
-/* This makes the chat disappear when the screen is too small. */
+/* This login status appear in the correct place when the screen is too small. */
 @media screen and (max-width:1024px){
  .loginNavigationBar{
     right: 0px;
@@ -49,4 +60,14 @@
   .topNavigationBar{
     width: 100%;
   }
+}
+
+.navigationBarButtonList :nth-child(n+4){
+  background: linear-gradient(#1f7a1f,#33cc33);
+  border-color:#1a651a;
+}
+
+.navigationBarButtonList :nth-child(n+4):hover{
+  background: linear-gradient(#33cc33,#9ae59a);
+  border-color:#1a651a;
 }

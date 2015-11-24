@@ -1,26 +1,30 @@
+.postElement{
+  overflow: auto;
+  margin: 5px;
+}
 
-.postElement:hover{
-  margin-left: 10px;
+.postInfo:hover{
+  width: calc(100% - 140px);
   background-color: #ccecff;
   transition:  .2s ease-in-out;
 }
 
-.postElement{
+
+.postInfo{
   position: relative;
-  margin: 5px;
   border: solid 1px lightgray;
   border-radius: 10px;
   padding: 5px 10px 5px 10px;
   display: inline-block;
-  width: calc(100% - 180px);
+  width: calc(100% - 130px);
+  float: right;
 }
 
 #postPicture{
   position: relative;
-  top: 17px;
-  margin-left: 5px;
-  max-width: 50px;
-  max-height: 50px;
+  margin-top: 5px;
+  font-size: 12px;
+  margin-right: 0px;
   display: inline;
 }
 

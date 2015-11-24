@@ -1,45 +1,53 @@
 /* Styling for when user clicks on a post. */
-.singlePostContainer:hover{
-  margin-left: 10px;
-  background-color: #ccecff;
-  transition:  .2s ease-in-out;
+
+.newCommentForm{
+  width: 505px;
+  margin-left: 140px;
+  border: solid lightgray 1px;
+  border-radius: 10px;
+  padding: 20px;
 }
 
-.singlePostContainer{
-  position: relative;
-  margin: 5px;
-  border: solid 1px lightgray;
+#commentTextBox{
+  width: 500px;
+  height:  50px;
+  line-height: 13px;
+  padding: 0px;
+}
+
+#commentTextBox:focus{
+  height: 200px;
+  transition: .2s ease-in-out;
+
+}
+
+#commentSend{
+  margin-top: 10px;
+  margin-left: 450px;
+}
+
+
+.commentElement{
+    margin: 10px;
+    overflow: auto;
+}
+
+.commentInfo{
+  font-size: 13px;
+  border: solid lightgray 1px;
+  border-radius: 10px;
   padding: 5px 10px 5px 10px;
+  width: calc(100% - 80px);
+  float: right;
+}
+
+#commentPicture{
   display: inline-block;
-  width: calc(100% - 180px);
-}
-
-#singlePostPicture{
   position: relative;
-  top: 17px;
-  margin-left: 5px;
-  max-width: 50px;
-  max-height: 50px;
+  height: inherit;
+  
+}
+
+#commentDate{
   display: inline;
-}
-
-#singlePostAuthor:hover, #singlePostAuthor:hover{
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-#singlePostAuthor, #singlePostDate{
-  font-size: 12px;
-  display: inline;
-}
-
-#singlePostTitle{
-  position: relative;
-  font-weight:bold;
-  font-size: 20px;
-}
-
-#singlePostContent{
-  background: linear-gradient(white, #e5f5ff);
-  padding: 10px;
 }
