@@ -28,6 +28,12 @@ angular.module('homeModule').config(['$stateProvider', '$locationProvider', func
      	templateUrl: '../views/userAccountPage.html',
      	controller: 'ProfileController'
      });
+     $stateProvider.state('homePage.map', {
+     	url: '/map',
+     	templateUrl: '../views/mapPage.html',
+     	controller: 'MapController'
+     });
+
 }]);
 // End of module initialization.
 

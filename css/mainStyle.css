@@ -12,3 +12,9 @@
 	color: #0099ff;
 }
 
+#mapContainer(
+  width: 200px;
+  height: 200px;
+  position: absolute;
+)
+
