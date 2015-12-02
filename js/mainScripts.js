@@ -23,7 +23,7 @@ angular.module('homeModule').config(['$stateProvider', '$locationProvider', func
         templateUrl: '../views/createPostPage.html',
         controller: 'PostController'
     });
-     $stateProvider.state('homePage.openProfile', {
+     $stateProvider.state('homePage.profile', {
      	url: '/profile',
      	templateUrl: '../views/userAccountPage.html',
      	controller: 'ProfileController'
@@ -62,6 +62,9 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 			return "You are logged in as "+ $scope.username;
 		}
 	}
+    $scope.logOut = function(user) {
+        ref.unauth();
+    };
 		
 	
 }]);
