@@ -2,10 +2,10 @@
 
 <!-- The navigation bar is at the top of the page and it contains buttons for important pages. -->
 <div class="topNavigationBar">
-	
+
 	<div class="banner"></div>
 
-	<u1 class="navigationBarButtonList">
+	<u1 class="navigationBarButtonList" style="color:white; text-decoration:none">
 		<li><a ui-sref="homePage.allPosts">Home</a></li>
 		<li><a ui-sref="homePage.profile">Profile</a></li>
 		<li><a ui-sref="homePage.map">Map</a></li>
@@ -27,7 +27,7 @@
 
 <!-- This is the chat area, which is always on the right side of the screen. -->
 <div class="chatArea" ng-controller="ChatController" scroll-glue="glued">
-        
+
 		<div class="messageArea">
 	        <div class="chatMessageElement" ng-repeat="message in messages">
 	            <div id="chatName">{{message.author}}</div>
@@ -39,6 +39,6 @@
             <input type="text" ng-model="message" id="chatTextBox">
             <input type="submit" value="Send" id="chatSubmitButton">
         </form>
-        
+
     </div>
 </div>
