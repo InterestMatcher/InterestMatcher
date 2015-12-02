@@ -67,6 +67,9 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
         $state.go('loginPage');
     };
 
+ $scope.goToHomepage = function(){
+   $state.go('homePage.allPosts');
+ }
 
 }]);
 
