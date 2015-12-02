@@ -17,9 +17,9 @@
 
 <!-- This is the small bar at the top that contains login status. -->
 <div class="loginNavigationBar" ng-controller="HomeController">
-	 <button ng-click="logOut(user)">
+	 <a ng-click="logOut(user)">
         {{getLoginMessage()}}
-      </button>
+      </a>
 </div>
 
 <!-- This is the content area, where the view changes depending on where you are on the website. -->
