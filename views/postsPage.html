@@ -1,15 +1,15 @@
 
 <div ng-controller="PostController">
-    
+
     <div class="postOptions">
-        <a class="submitNewPostButton" ui-sref="homePage.createPost"> Submit a Post </a>       
-        
+        <a class="submitNewPostButton" ui-sref="homePage.createPost"> Submit a Post </a>
+
     </div>
 
     <div class="postListArea">
-        
+
         <div class="postList">
-            <div ng-repeat="post in posts">
+            <div ng-repeat="post in posts | orderBy:'post.date':true">
                 <div class="postSpacer">
                     <div id="postPicture">
                     <img src="http://graph.facebook.com/{{post.authorID)}}/picture?type=medium">
@@ -17,8 +17,8 @@
                     <div id="postTitle" ng-click="goToPost(getID(post))">{{post.title}}</div>
                     <div id="postMisc">Posted by</div>
                     <div id="postAuthor"> <a href="#">{{post.author}} </a></div>
-                    on 
-                    <div id="postDate"> {{post.date | date: 'medium'}}</div>           
+                    on
+                    <div id="postDate"> {{post.date | date: 'medium'}}</div>
                 </div>
             </div>
             {{noPostsAvailableMessage}}
