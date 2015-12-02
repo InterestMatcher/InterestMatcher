@@ -59,7 +59,7 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 		}
 		else {
 			console.log("Username is not null");
-			return "You are logged in as "+ $scope.username;
+			return "You are logged in as "+ $scope.username + "; click here to logout.";
 		}
 	}
     $scope.logOut = function(user) {
