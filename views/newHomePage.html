@@ -9,15 +9,17 @@
 		<li><a ui-sref="homePage.allPosts">Home</a></li>
 		<li><a ui-sref="homePage.profile">Profile</a></li>
 		<li><a ui-sref="homePage.map">Map</a></li>
-		<li><a ui-sref="homePage.submitEvent">Create Event</a></li>
-		<li><a ui-sref="homePage.submitDiscussion">Create Discussion</a></li>
+		<li><a ui-sref="homePage.createPost">Create Post</a></li>
+		<li><a ui-sref="homePage.submitDiscussion">----</a></li>
 	</u1>
 
 </div>
 
 <!-- This is the small bar at the top that contains login status. -->
 <div class="loginNavigationBar" ng-controller="HomeController">
-	{{getLoginMessage()}}
+	 <button ng-click="logOut(user)">
+        {{getLoginMessage()}}
+      </button>
 </div>
 
 <!-- This is the content area, where the view changes depending on where you are on the website. -->
