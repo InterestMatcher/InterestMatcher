@@ -63,7 +63,7 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 		}
 	}
     $scope.logOut = function(user) {
-        ref.unauth();
+        mainRef.unauth();
     };
 		
 	
