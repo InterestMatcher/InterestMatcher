@@ -67,9 +67,17 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
         $state.go('loginPage');
     };
 
- $scope.goToHomepage = function(){
-   $state.go('homePage.allPosts');
- }
+   $scope.goToHomepage = function(){
+     $state.go('homePage.allPosts');
+   }
+
+   $scope.goToProfile = function(){
+     $state.go('homePage.profile');
+   }
+
+   $scope.goToMap = function(){
+     $state.go('homePage.map');
+   }
 
 }]);
 
