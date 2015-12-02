@@ -43,7 +43,7 @@ var app = angular.module('homeModule');
 var mainRef = new Firebase("https://interestmatcher.firebaseio.com/");
 
 app.controller('HomeController',['$scope', '$state', function($scope, $state){
-	
+
 	// Redirects user to login page if they are not logged in.
 	if (mainRef.getAuth() == null){
 		$state.go('loginPage');
@@ -66,8 +66,8 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
         mainRef.unauth();
         $state.go('loginPage');
     };
-		
-	
+
+
 }]);
 
 app.controller('ChatController',['$scope','publicChatMessages',
@@ -82,7 +82,7 @@ app.controller('ChatController',['$scope','publicChatMessages',
 
 		$scope.facebookID = fullID.substring(fbString.length,fullID.length);
 		console.log("Facebook ID:"  + $scope.facebookID);
-		
+
 		// Adds a new post if the chat box input is valid
 		$scope.addMessage = function(){
 			if(isValidChat($scope.message))  {
@@ -91,16 +91,16 @@ app.controller('ChatController',['$scope','publicChatMessages',
 					content: sanitizeChatInput($scope.message),
 					facebookID: $scope.facebookID,
 				});
-			
+
 
 
 			// empty the text box when submitted
 			document.getElementById("chatBoxContent").value = '';
-			
+
 			// attempts to scoll to bottom of chat when chats are sumbitted
 			var objDiv = document.getElementById("chatPane");
 			objDiv.scrollTop = objDiv.scrollHeight;
-			
+
 			console.log('Chat sumbit method has run');
 			// Reset title and content.
 			//$scope.newPostTitle = '';
@@ -111,7 +111,7 @@ app.controller('ChatController',['$scope','publicChatMessages',
 ]);
 
 // Returns an array containing all messages in the public chat.
-app.factory('publicChatMessages', ['$firebaseArray', 
+app.factory('publicChatMessages', ['$firebaseArray',
 	function($firebaseArray){
 		console.log("Retrieving array of all public chat messages");
 
@@ -134,7 +134,7 @@ function isValidChat(input)  {
 	if(input.length > 141) // Let's just say we've 1-up'ed Twitter
 		return false;
 	// TODO: add logic to return false if the new chat will be a duplicate of the last chat
-		
+
 	return true;
 }
 
