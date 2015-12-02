@@ -62,6 +62,9 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 			return "You are logged in as "+ $scope.username;
 		}
 	}
+    $scope.logOut = function(user) {
+        ref.unauth();
+    };
 		
 	
 }]);
