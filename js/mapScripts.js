@@ -1,4 +1,4 @@
-angular.module("mapModule",["firebase","ui.router"]);
+angular.module("mapModule",["firebase","ui.router", "ngMap"]);
 
 var app = angular.module("mapModule");
 
