@@ -27,7 +27,7 @@
 
     <div class="commentsContainer">
 
-		<div ng-repeat="comment in comments">
+		<div ng-repeat="comment in comments | orderBy:'date':true">
 
 			<div class="commentElement">
 
