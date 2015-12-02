@@ -29,7 +29,7 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
     // Set up a new firebase reference to where all posts are saved.
     // NOTE: All posts are saved to /chill, but in the future, they will also be saved in their interest group.
     var ref = new Firebase("https://interestmatcher.firebaseio.com/posts/chill");
-    var id = 0;
+    var postId = 0;
 
     var facebookID = ref.getAuth().uid;
     facebookID = facebookID.substring(9);
@@ -48,9 +48,9 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
         // After the post is completely added, this will retrieve the ID of said post and add it to the post information.
         // This makes it easier to know which posts is being clicked on.
       .then(function(childRef) {
-           id = childRef.key();
-           childRef.update({ID:id});
-           $stateParams.ID = id;
+           postId = childRef.key();
+           childRef.update({id:postId});
+           $stateParams.ID = postId;
        })
 
       // Redired user back to the home page after the post is added.
