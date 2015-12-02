@@ -60,7 +60,7 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
     // Returns the id of any post that is passed in.
     $scope.getID = function(post){
         console.log(post);
-        return post.ID;        
+        return post.id;        
     }
 
     // Redirects user to the post with the id given.
