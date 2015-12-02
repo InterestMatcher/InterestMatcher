@@ -64,6 +64,7 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 	}
     $scope.logOut = function(user) {
         mainRef.unauth();
+        $state.go('loginPage');
     };
 		
 	
