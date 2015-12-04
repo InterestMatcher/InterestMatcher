@@ -1,0 +1,42 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+#container {
+    overflow:hidden;
+    position:relative;
+}
+
+#loginBanner {
+    padding: 0px;
+}
+
+#loginMessage {
+    padding: 0px;
+}
+
+#fbLoginButton {
+    
+    padding: 5px;
+}
+
+.bg {
+    z-index: 20;
+    width: 700px;
+    height: 300px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+}
+
+.loginJumbotron {
+    z-index: 10;
+    width: 574px;
+    height: 152px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -287px;
+    margin-top: -75px;
+}

@@ -10,17 +10,17 @@
 
 #commentTextBox{
   width: 500px;
-  height:  50px;
+  height:  100px;
   line-height: 13px;
   padding: 0px;
 }
-
+/*
 #commentTextBox:focus{
   height: 200px;
   transition: .2s ease-in-out;
 
 }
-
+*/
 #commentSend{
   margin-top: 10px;
   margin-left: 450px;
