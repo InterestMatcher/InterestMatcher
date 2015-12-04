@@ -19,6 +19,8 @@
                     <div id="postAuthor"> <a href="#">{{post.author}} </a></div>
                     on
                     <div id="postDate"> {{post.date | date: 'medium'}}</div>
+                    <!-- Can we add a counter here to display total comments? -->
+                    <div id="numComments"></div>
                 </div>
             </div>
             {{noPostsAvailableMessage}}
