@@ -31,7 +31,7 @@
 <div class="chatArea" ng-controller="ChatController" scroll-glue="glued">
 
 		<div id="messageArea">
-	        <div class="chatMessageElement" ng-repeat="message in messages">
+	        <div id="chatMessageElement" ng-repeat="message in messages">
 	            <div id="chatName">{{message.author}}</div>
 	            <div id="chatMessage">{{message.content}}</div>
 	        </div>
