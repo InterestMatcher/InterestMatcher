@@ -50,6 +50,7 @@
   border-bottom: solid #006099 2px;
   width: auto;
   right: 400px;
+    cursor: pointer;
 }
 
 /* This login status appear in the correct place when the screen is too small. */
@@ -72,7 +73,7 @@
   border-color:#1a651a;
 }
 
-a.loginNavigationBar:hover {
+.loginNavigationBar:hover {
  background: #3d7a80;
  background: -webkit-linear-gradient(top, #3d7a80, #2f5f63);
  background: -moz-linear-gradient(top, #3d7a80, #2f5f63);
