@@ -87,8 +87,10 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 
 app.controller('ChatController',['$scope','publicChatMessages',
 	function($scope, publicChatMessages){
-		
+
 		$scope.messages = publicChatMessages;
+
+		publicChatMessages.$loaded().then(scrollToBottomOfChat());
 
 		$scope.glued = true;
 
@@ -110,11 +112,8 @@ app.controller('ChatController',['$scope','publicChatMessages',
 
 
 			// empty the text box when submitted
-			document.getElementById("chatBoxContent").value = '';
-
-			// attempts to scoll to bottom of chat when chats are sumbitted
-			var objDiv = document.getElementById("chatPane");
-			objDiv.scrollTop = objDiv.scrollHeight;
+			document.getElementById("chatTextBox").value = '';
+			scrollToBottomOfChat();
 
 			console.log('Chat sumbit method has run');
 			// Reset title and content.
@@ -161,4 +160,12 @@ function isValidChat(input)  {
 function sanitizeChatInput(input)  {
 	// Currently replaced by isValidChat.  Edit to add any changes to user input
 	return input;
+}
+
+function scrollToBottomOfChat(){
+
+	// attempts to scoll to bottom of chat when chats are sumbitted
+	var objDiv = document.getElementById("messageArea");
+	objDiv.scrollTop = objDiv.scrollHeight;
+
 }
