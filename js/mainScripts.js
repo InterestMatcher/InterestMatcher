@@ -79,6 +79,10 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
      $state.go('homePage.map');
    }
 
+   $scope.goToCreatePost = function() {
+     $state.go("homePage.createPost");
+   }
+
 }]);
 
 app.controller('ChatController',['$scope','publicChatMessages',
