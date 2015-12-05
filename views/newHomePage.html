@@ -29,8 +29,8 @@
 <!-- This is the chat area, which is always on the right side of the screen. -->
 <div class="chatArea" ng-controller="ChatController" scroll-glue="glued">
 
-		<div class="messageArea">
-	        <div class="chatMessageElement" ng-repeat="message in messages">
+		<div id="messageArea">
+	        <div id="chatMessageElement" ng-repeat="message in messages">
 	            <div id="chatName">{{message.author}}</div>
 	            <div id="chatMessage">{{message.content}}</div>
 	        </div>
