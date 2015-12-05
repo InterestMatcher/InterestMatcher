@@ -13,6 +13,8 @@ angular.module('postModule', ['ui.router', 'firebase', 'luegg.directives']);
 // This controller is responsible for displaying the home page list of posts.
 angular.module('postModule').controller('PostController', ['$scope','$stateParams', 'frontPagePosts', '$state',function ($scope,$stateParams,frontPagePosts, $state){
     
+    checkIfLoggedIn($state);
+
     // Uses the factory "frontPagePosts" to retrieve all the posts in Firebase and then puts them in the scope.
     $scope.posts = frontPagePosts;
 

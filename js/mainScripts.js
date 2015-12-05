@@ -45,9 +45,9 @@ var mainRef = new Firebase("https://interestmatcher.firebaseio.com/");
 app.controller('HomeController',['$scope', '$state', function($scope, $state){
 
 	// Redirects user to login page if they are not logged in.
-	if (mainRef.getAuth() == null){
-		$state.go('loginPage');
-	}
+	checkIfLoggedIn($state);
+
+
     $state.go('homePage.allPosts');
 
 		// Sets the username.
@@ -87,7 +87,7 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 
 app.controller('ChatController',['$scope','publicChatMessages',
 	function($scope, publicChatMessages){
-
+		
 		$scope.messages = publicChatMessages;
 
 		$scope.glued = true;
