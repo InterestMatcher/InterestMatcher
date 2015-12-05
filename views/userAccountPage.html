@@ -2,7 +2,10 @@
 			<div class="userInfo">
 					<div class="name">
 						<span>Name: {{ user.name }}</span>
-						<span>http://graph.facebook.com/{{post.authorID}}/picture?type=normal</span>
+						<div id="postPicture">
+				        <img src="http://graph.facebook.com/{{post.authorID}}/picture?type=normal"
+				        	 alt="Image not found" onError="this.src='http://40.media.tumblr.com/gWpDRTzE5o5evhxyQMEpPfaro1_100.png';"/>
+				        </div>
 					</div>
 			</div>
 	</div>

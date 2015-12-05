@@ -15,7 +15,7 @@
 	            <div id="postTitle" ng-click="goToPost(getID(post))">{{post.title}}</div>
 
 	            <div id="postDate">Posted on: {{post.date | date: 'medium'}} by</div>
-	            <div id="postAuthor"><a>{{post.author}}</a></div>
+	            <div id="postAuthor" ng-click="goToProfile()"><a>{{post.author}}</a></div>
 
 	            <div id="postContent">{{post.content}}</div>
 
