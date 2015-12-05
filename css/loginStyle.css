@@ -15,7 +15,7 @@ body {
     position:relative;
 }
 
-#loginBanner {
+/*#loginBanner {
     padding: 0px;
 }
 
@@ -26,7 +26,7 @@ body {
 #fbLoginButton {
 
     padding: 5px;
-}
+}*/
 
 .bg {
     z-index: 20;
@@ -39,8 +39,8 @@ body {
 
 .loginJumbotron {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
+    width: 100%;
+    text-align:center;
+    height:100%;
+    top:50%;
 }
