@@ -24,11 +24,7 @@ body {
 }
 
 #fbLoginButton {
-    margin-top: 10px;
-    padding: 5px;
-}
-
-.btn {
+  margin-top: 10px;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
@@ -38,12 +34,11 @@ body {
   background: #58D3F7;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  width:5%;
-  margin:auto;
+  width:50px;
   cursor:pointer;
 }
 
-.btn:hover {
+#fbLoginButton:hover {
   background: #0091ff;
   text-decoration: none;
 }
