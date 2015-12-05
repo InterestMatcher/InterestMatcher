@@ -17,7 +17,7 @@ body {
 }
 
 #fbLoginButton {
-    
+
     padding: 5px;
 }
 
@@ -31,12 +31,9 @@ body {
 }
 
 .loginJumbotron {
-    z-index: 10;
-    width: 574px;
-    height: 152px;
-    position: absolute;
-    left: 50%;
+    position: fixed;
     top: 50%;
-    margin-left: -287px;
-    margin-top: -75px;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
 }
