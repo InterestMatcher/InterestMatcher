@@ -71,3 +71,11 @@
   background: linear-gradient(#33cc33,#9ae59a);
   border-color:#1a651a;
 }
+
+a.loginNavigationBar:hover {
+ background: #3d7a80;
+ background: -webkit-linear-gradient(top, #3d7a80, #2f5f63);
+ background: -moz-linear-gradient(top, #3d7a80, #2f5f63);
+ background: -o-linear-gradient(top, #3d7a80, #2f5f63);
+ background: -ms-linear-gradient(top, #3d7a80, #2f5f63);
+ background: linear-gradient(top, #3d7a80, #2f5f63);

@@ -110,10 +110,10 @@ app.controller('ChatController',['$scope','publicChatMessages',
 
 
 			// empty the text box when submitted
-			document.getElementById("chatBoxContent").value = '';
+			document.getElementById("chatTextBox").value = '';
 
 			// attempts to scoll to bottom of chat when chats are sumbitted
-			var objDiv = document.getElementById("chatPane");
+			var objDiv = document.getElementById("messageArea");
 			objDiv.scrollTop = objDiv.scrollHeight;
 
 			console.log('Chat sumbit method has run');
