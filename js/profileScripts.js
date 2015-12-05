@@ -1,4 +1,4 @@
-angular.module('profileModule');
+angular.module('profileModule', ['firebase', 'ui.router']);
 
 var profileApp = angular.module('profileModule');
 
