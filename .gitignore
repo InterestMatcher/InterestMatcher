@@ -1,0 +1,4 @@
+.DS_Store
+*.pyc
+api_key.txt
+firebaseSecret.py
