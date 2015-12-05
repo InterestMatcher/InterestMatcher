@@ -1,11 +1,10 @@
-
-angular.module('profileModule');
+angular.module('profileModule',['xeditable']);
 
 var profileApp = angular.module('profileModule');
 
 profileApp.controller('ProfileController', function($scope) {
     $scope.user = {
       name: mainRef.getAuth().facebook.displayName,
-			authID: ref.getAuth().uid
+			authID: ref.getAuth().uid,
     };
 });
