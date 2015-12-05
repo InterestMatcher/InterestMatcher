@@ -1,3 +1,4 @@
+
 angular.module('profileModule',['xeditable']);
 
 var profileApp = angular.module('profileModule');
