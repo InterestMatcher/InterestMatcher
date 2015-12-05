@@ -15,7 +15,7 @@ body {
     position:relative;
 }
 
-/*#loginBanner {
+#loginBanner {
     padding: 0px;
 }
 
@@ -26,7 +26,26 @@ body {
 #fbLoginButton {
 
     padding: 5px;
-}*/
+}
+
+.btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: white;
+  font-size: 20px;
+  background: #58D3F7;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width:5%;
+  margin:auto;
+}
+
+.btn:hover {
+  background: #0091ff;
+  text-decoration: none;
+}
 
 .bg {
     z-index: 20;
