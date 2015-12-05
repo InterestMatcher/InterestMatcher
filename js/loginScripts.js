@@ -93,3 +93,11 @@ function getName(authData){
       return authData.facebook.displayName;
   }
 }
+
+
+function checkIfLoggedIn($state){
+  var mainRef = new Firebase("https://interestmatcher.firebaseio.com/");
+  if (mainRef.getAuth() == null){
+    $state.go("loginPage");
+  }
+}
