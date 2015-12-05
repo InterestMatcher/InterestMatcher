@@ -8,6 +8,6 @@ profileApp.controller('ProfileController', function($scope) {
 
 		$scope.user = {
       name: ref.getAuth().facebook.displayName,
-			authID: ref.getAuth().uid,
+			authID: (ref.getAuth().uid).substring(9),
     };
 });
