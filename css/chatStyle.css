@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-.messageArea{
+#messageArea{
   scroll-behavior: auto;
   height: calc(100% - 50px);
   overflow-y:scroll;
@@ -52,7 +52,7 @@
   }
 }
 
-.chatMessageElement{
+#chatMessageElement{
   margin-top: 4px;
 }
 
