@@ -1,13 +1,22 @@
-<div class="postMake">
-    <div id="newPostHeader">
-        <h1>Create a New Post</h1>
-        <h2>Share your idea, challenge, worries...</h2>
-    </div>
-    
-    
-    <form class="newPostForm" ng-submit="addPost()">
-        Title: <textarea rows="1" cols="30" name="usrtxt" wrap="hard" ng-model="title"></textarea>
-        Text: <textarea rows="5" cols="40" name="usrtxt" wrap="hard" ng-model="content" id="commentTextBox"></textarea>
-        <input type="submit" value="Send">
-    </form>
+
+<div id="newPostHeader">
+    <h1>Create a New Post</h1>
+    <h2>Share your idea, challenge, worries...</h2>
 </div>
+
+
+<form class="newPostForm" ng-submit="addPost()">
+
+	<h2>Title</h2>
+	<div id="newPostTitleContainer">
+    	<textarea id="newPostTitleBox" rows="1" cols="50" name="usrtxt" wrap="hard" ng-model="title"></textarea>
+    </div>
+
+    <h2>Text</h2>
+    <div id="newPostTextContainer">
+    	<textarea id="newPostTextBox" rows="5" cols="50" name="usrtxt" wrap="hard" ng-model="content" id="commentTextBox"></textarea>
+    </div>
+
+    <input type="submit" value="Send" id="newPostSubmitButton">
+
+</form>

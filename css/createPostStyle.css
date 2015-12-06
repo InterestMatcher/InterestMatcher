@@ -1,0 +1,22 @@
+/** Styling rules used for create a new post page. **/
+
+#newPostHeader, .newPostForm{
+  text-align: center;
+  margin-top: 20px;
+  color: #006cb3;
+}
+
+#newPostTextContainer, #newPostTitleContainer{
+  text-align: center;
+  border-radius: 15px;
+  margin: 10px;
+  background: linear-gradient(white, #e5f5ff);
+  margin-left: calc(50% - 300px);
+  width: 600px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#newPostTextBox, #newPostTitleBox{
+  resize: none;
+}
