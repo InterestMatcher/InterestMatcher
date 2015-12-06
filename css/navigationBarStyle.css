@@ -74,6 +74,26 @@
 }
 
 .loginNavigationBar:hover {
+<<<<<<< HEAD
+    background: #0780A8;
+    background: -webkit-linear-gradient(top, #0780A8, #219CC4);
+    background: -moz-linear-gradient(top, #0780A8, #219CC4);
+    background: -o-linear-gradient(top, #0780A8, #219CC4);
+    background: -ms-linear-gradient(top, #0780A8, #219CC4);
+    background: linear-gradient(top, #0780A8, #219CC4);
+    text-decoration: none;
+}
+
+.navigationBarButtonList:hover{
+    background: #0780A8;
+    background: -webkit-linear-gradient(top, #0780A8, #219CC4);
+    background: -moz-linear-gradient(top, #0780A8, #219CC4);
+    background: -o-linear-gradient(top, #0780A8, #219CC4);
+    background: -ms-linear-gradient(top, #0780A8, #219CC4);
+    background: linear-gradient(top, #0780A8, #219CC4);
+    text-decoration: none;
+}
+=======
  background: #3d7a80;
  background: -webkit-linear-gradient(top, #3d7a80, #2f5f63);
  background: -moz-linear-gradient(top, #3d7a80, #2f5f63);
@@ -81,3 +101,4 @@
  background: -ms-linear-gradient(top, #3d7a80, #2f5f63);
     background: linear-gradient(top, #3d7a80, #2f5f63);
 }
+>>>>>>> InterestMatcher/master
