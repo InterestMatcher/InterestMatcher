@@ -46,7 +46,11 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 
 	// Redirects user to login page if they are not logged in.
 	checkIfLoggedIn($state);
-
+	$scope.scrollChat = function(){
+		// attempts to scoll to bottom of chat when chats are sumbitted
+		var objDiv = document.getElementById("messageArea");
+		objDiv.scrollTop = objDiv.scrollHeight;
+	}
 
     $state.go('homePage.allPosts');
 
@@ -90,10 +94,6 @@ app.controller('ChatController',['$scope','publicChatMessages',
 
 		$scope.messages = publicChatMessages;
 
-		window.onload = function(){
-			publicChatMessages.$loaded().then(scrollToBottomOfChat(false));
-		}
-
 		$scope.glued = true;
 
 		var fullID = mainRef.getAuth().uid;
@@ -110,15 +110,8 @@ app.controller('ChatController',['$scope','publicChatMessages',
 					content: sanitizeChatInput($scope.message),
 					facebookID: $scope.facebookID,
 				});
-
-			scrollToBottomOfChat(true);
-
-			// empty the text box when submitted
+			// Empty the text box when submitted.
 			document.getElementById("chatTextBox").value = '';
-
-			console.log('Chat sumbit method has run');
-			// Reset title and content.
-			//$scope.newPostTitle = '';
 			$scope.message = '';
 			}
 		}
@@ -163,17 +156,7 @@ function sanitizeChatInput(input)  {
 	return input;
 }
 
-function scrollToBottomOfChat(newMessageSent){
+function scrollToBottomOfChat(){
 
-	// attempts to scoll to bottom of chat when chats are sumbitted
-	var objDiv = document.getElementById("messageArea");
-	var height = objDiv.scrollHeight;
-
-	console.log("Chat message height: "+document.getElementById("chatMessageElement").offsetHeight);
-
-	if (newMessageSent)
-		height += document.getElementById("chatMessageElement").offsetHeight;
-
-	objDiv.scrollTop = height;
 
 }
