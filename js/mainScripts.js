@@ -5,12 +5,12 @@ angular.module('homeModule', ['firebase', 'ui.router', 'luegg.directives']);
 angular.module('homeModule').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
     $stateProvider.state('homePage', {
         url: '/home',
-        templateUrl: '../views/newHomePage.html',
+        templateUrl: '../views/homePage.html',
         controller:'HomeController'
     });
     $stateProvider.state('homePage.allPosts', {
         url: '/posts',
-        templateUrl: '../views/newPostsPage.html',
+        templateUrl: '../views/postsPage.html',
         controller: 'PostController',
     });
     $stateProvider.state('homePage.singlePost', {

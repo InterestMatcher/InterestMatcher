@@ -1,29 +1,27 @@
+<!-- This is the view in which the posts are shown. -->
 
-<div ng-controller="PostController">
+<div class="postsArea">
 
-    <div class="postOptions">
-        <a class="submitNewPostButton" ui-sref="homePage.createPost"> Submit a Post </a>
+	<div ng-repeat="post in posts | orderBy:'date':true">
 
-    </div>
+		<div class="postElement">
+			<div id="postPicture">
+	        <img src="http://graph.facebook.com/{{post.authorID}}/picture?type=normal"
+	        	 alt="Image not found" onError="this.src='http://40.media.tumblr.com/gWpDRTzE5o5evhxyQMEpPfaro1_100.png';"/>
+	        </div>
 
-    <div class="postListArea">
+			<div class="postInfo">
 
-        <div class="postList">
-            <div ng-repeat="post in posts | orderBy:'post.date':true">
-                <div class="postSpacer">
-                    <div id="postPicture">
-                    <img src="http://graph.facebook.com/{{post.authorID)}}/picture?type=medium">
-                    </div>
-                    <div id="postTitle" ng-click="goToPost(getID(post))">{{post.title}}</div>
-                    <div id="postMisc">Posted by</div>
-                    <div id="postAuthor"> <a href="#">{{post.author}} </a></div>
-                    on
-                    <div id="postDate"> {{post.date | date: 'medium'}}</div>
-                    <!-- Can we add a counter here to display total comments? -->
-                    <div id="numComments"></div>
-                </div>
-            </div>
-            {{noPostsAvailableMessage}}
-        </div>
-    </div>
+	            <div id="postTitle" ng-click="goToPost(getID(post))">{{post.title}}</div>
+
+	            <div id="postDate">Posted on {{post.date | date: 'medium'}} by</div>
+	            <div id="postAuthor" ng-click="goToProfile()">{{post.author}}</div>
+
+	            <div id="postContent">{{post.content}}</div>
+
+			</div>
+		</div>
+
+	</div>
+
 </div>
