@@ -52,23 +52,34 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
       .then(function(childRef) {
            postId = childRef.key();
            childRef.update({id:postId});
-           $stateParams.ID = postId;
+           //$stateParams.ID = postId;
        })
 
       // Redired user back to the home page after the post is added.
       $state.go('homePage.allPosts');
     }    
-    
-    // Returns the id of any post that is passed in.
-    $scope.getID = function(post){
-        console.log(post);
-        return post.id;        
+
+    $scope.getPostID = function(post){
+    console.log(post);
+    return post.id;        
     }
+
+    $scope.getProfileID = function(post){
+    console.log("Author ID is:"+post.authorID);
+    return post.authorID;        
+    }
+
 
     // Redirects user to the post with the id given.
     $scope.goToPost = function(id){
       console.log("Redirecting to post of ID:" + id);
-      $state.go("homePage.singlePost", {ID:id});
+      $state.go("homePage.singlePost", {ID: id});
+    }
+
+    // Redirectes user to the profile of the user who posted the given post.
+    $scope.goToProfileofId = function(id){
+      console.log("Redirecting to profile of ID:" + id);
+      $state.go("homePage.profile", {profileID: id});
     }
     
 // This controller is responsible for the details of a post that the user clicked on.

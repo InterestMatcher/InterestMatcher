@@ -24,7 +24,7 @@ angular.module('homeModule').config(['$stateProvider', '$locationProvider', func
         controller: 'PostController'
     });
      $stateProvider.state('homePage.profile', {
-     	url: '/profile',
+     	url: '/profile/:profileID',
      	templateUrl: '../views/userAccountPage.html',
      	controller: 'ProfileController'
      });
@@ -72,7 +72,7 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
    }
 
    $scope.goToProfile = function(){
-     $state.go('homePage.profile');
+     $state.go("homePage.profile", {profileID: mainRef.getAuth().uid.substring(9)});
    }
 
    $scope.goToMap = function(){
