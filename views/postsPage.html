@@ -17,7 +17,14 @@
 	            <div id="postDate">Posted on {{post.date | date: 'medium'}} by</div>
 	            <div id="postAuthor" ng-click="goToProfileOfId(getProfileID(post))">{{post.author}}</div>
 
+	            <div id="interested" ng-click="showInterest(post)">Chill!</div>
+
 	            <div id="postContent">{{post.content}}</div>
+
+	            <div class="postBottomList">
+	            	<li>{{post.interested}} people want to chill!</li>
+	            	<li>comments ({{post.numberOfComments}})</li>
+	            </div>
 
 			</div>
 		</div>

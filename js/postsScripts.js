@@ -39,12 +39,16 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
 
     // The function used in the scope to add a post.
     $scope.addPost = function(){
+
         $scope.posts.$add({
             author: ref.getAuth().facebook.displayName,
             authorID: facebookID,
             title: $scope.title,
             date: new Date().toJSON(),
             content: $scope.content,
+            interestedPeople: { facebookID : true},
+            interested: 0,
+            numberOfComments: 0,
         })
         
         // After the post is completely added, this will retrieve the ID of said post and add it to the post information.
@@ -77,9 +81,14 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
     }
 
     // Redirectes user to the profile of the user who posted the given post.
-    $scope.goToProfileofId = function(id){
+    $scope.goToProfileOfId = function(id){
       console.log("Redirecting to profile of ID:" + id);
       $state.go("homePage.profile", {profileID: id});
+    }
+
+    // Makes the user show interest in post.
+    $scope.showInterest = function(post){
+        post.interested++;
     }
     
 // This controller is responsible for the details of a post that the user clicked on.
@@ -103,6 +112,9 @@ angular.module('postModule').controller('PostController', ['$scope','$stateParam
           date: new Date().toJSON(),
           content: $scope.content,
       });
+
+      $scope.singlePost.numberOfComments++;
+      $scope.singlePost.$save();
     }
 
 }]);

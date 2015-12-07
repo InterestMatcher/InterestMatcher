@@ -33,9 +33,27 @@
   cursor: pointer;
 }
 
-#postAuthor, #postDate{
+#postAuthor, #postDate, #interested{
   font-size: 12px;
   display: inline;
+}
+
+#interested{
+  float: right;
+  color: white;
+  margin-right:3px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0px 20px;
+  border-right: solid #006099;
+  border-bottom: solid #006099 2px;
+  background: linear-gradient(#006cb3,#0099ff);
+  border-radius: 10px;
+}
+
+ #interested:hover{
+  background: linear-gradient(#0099ff, #80ceff);
+  cursor: pointer;
 }
 
 #postTitle{
@@ -48,4 +66,16 @@
   background: linear-gradient(white, #e5f5ff);
   padding: 10px;
   border-radius: 10px;
+  font-size: 13px;
+}
+
+.postBottomList{
+  margin-top: 2px;
+  display: flex;
+  list-style: none;
+  font-size: 10px;
+}
+
+.postBottomList li{
+  margin-right: 30px;
 }

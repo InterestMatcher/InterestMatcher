@@ -58,11 +58,10 @@ app.controller('HomeController',['$scope', '$state', function($scope, $state){
 	$scope.username = mainRef.getAuth().facebook.displayName;
 	$scope.getLoginMessage = function(){
 		if (!mainRef.getAuth()){
-			console.log("Username null.");
+			$state.go("loginPage");
 			return "You are not logged in.";
 		}
 		else {
-			console.log("Username is not null");
 			return "You are logged in as "+ $scope.username + "; click here to logout.";
 		}
 	}
