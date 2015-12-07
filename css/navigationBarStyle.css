@@ -34,7 +34,6 @@
 .navigationBarButtonList li:hover{
   background: linear-gradient(#0099ff, #80ceff);
   cursor: pointer;
-  text-decoration: underline;
 }
 
 .loginNavigationBar{
@@ -50,8 +49,14 @@
   border-bottom: solid #006099 2px;
   width: auto;
   right: 400px;
-    cursor: pointer;
+  cursor: pointer;
 }
+
+.loginNavigationBar:hover {
+    background: linear-gradient(#0099ff, #80ceff);
+    text-decoration: none;
+}
+
 
 /* This login status appear in the correct place when the screen is too small. */
 @media screen and (max-width:1024px){
@@ -72,33 +77,3 @@
   background: linear-gradient(#33cc33,#9ae59a);
   border-color:#1a651a;
 }
-
-.loginNavigationBar:hover {
-<<<<<<< HEAD
-    background: #0780A8;
-    background: -webkit-linear-gradient(top, #0780A8, #219CC4);
-    background: -moz-linear-gradient(top, #0780A8, #219CC4);
-    background: -o-linear-gradient(top, #0780A8, #219CC4);
-    background: -ms-linear-gradient(top, #0780A8, #219CC4);
-    background: linear-gradient(top, #0780A8, #219CC4);
-    text-decoration: none;
-}
-
-.navigationBarButtonList:hover{
-    background: #0780A8;
-    background: -webkit-linear-gradient(top, #0780A8, #219CC4);
-    background: -moz-linear-gradient(top, #0780A8, #219CC4);
-    background: -o-linear-gradient(top, #0780A8, #219CC4);
-    background: -ms-linear-gradient(top, #0780A8, #219CC4);
-    background: linear-gradient(top, #0780A8, #219CC4);
-    text-decoration: none;
-}
-=======
- background: #3d7a80;
- background: -webkit-linear-gradient(top, #3d7a80, #2f5f63);
- background: -moz-linear-gradient(top, #3d7a80, #2f5f63);
- background: -o-linear-gradient(top, #3d7a80, #2f5f63);
- background: -ms-linear-gradient(top, #3d7a80, #2f5f63);
-    background: linear-gradient(top, #3d7a80, #2f5f63);
-}
->>>>>>> InterestMatcher/master
