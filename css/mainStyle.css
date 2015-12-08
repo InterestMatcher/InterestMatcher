@@ -18,3 +18,18 @@
   position: absolute;
 )
 
+#bottomBar{
+  position:relative;
+  width: 80%;
+  margin: 50px;
+}
+
+#googlePlayContainer{
+   position: relative;
+   width: 120px;
+   margin: 20px;
+}
+
+#googlePlayBadge{
+  width: 120px;
+}
