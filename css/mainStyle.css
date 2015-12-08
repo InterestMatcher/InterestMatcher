@@ -12,9 +12,18 @@
 	color: #0099ff;
 }
 
-#mapContainer(
-  width: 200px;
-  height: 200px;
-  position: absolute;
-)
+.bottomNavBar{
+  width: calc(100% - 400px);
+  text-align: center;
+  font-size: 12px;
+  margin: 30px;
+}
 
+#googlePlayContainer{
+   position: relative;
+  margin: 20px;
+}
+
+#googlePlayBadge{
+  width: 120px;
+}

@@ -1,10 +1,11 @@
-	<div style="text-align: center">
-			<div class="userInfo">
-					<div class="name">
-						<span>{{profileInfo.name}}</span>
-									<img src="http://graph.facebook.com/{{user.authID}}/picture?type=normal"
-				        	 alt="Image not found"
-									 onError="this.src='http://40.media.tumblr.com/gWpDRTzE5o5evhxyQMEpPfaro1_100.png';"/>
-				    </div>
-			</div>
+<div style="text-align: center">
+	<div class="userInfo">
+		<div>
+		Name here.
+		{{profileInfo.name}}
+			<img src="http://graph.facebook.com/{{profileInfo.id}}/picture?type=normal"
+			alt="Image not found"
+			onError="this.src='http://40.media.tumblr.com/gWpDRTzE5o5evhxyQMEpPfaro1_100.png';"/>
+		</div>
+	</div>
 </div>

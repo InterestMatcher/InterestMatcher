@@ -21,7 +21,7 @@ profileApp.factory("getProfileInformation", ["$firebaseObject", '$stateParams' ,
 
           console.log("Retrieving profile of ID:"+ $stateParams.profileID);    
           // The profile is found on firebase by appending its ID to the reference.
-          var ref = new Firebase('https://interestmatcher.firebaseio.com/users/facebook:'+$stateParams.profileID+"/");
+          var ref = new Firebase('https://interestmatcher.firebaseio.com/users/facebook:'+$stateParams.profileID+'/');
           // Make sure that the post is returned as an object, not as an array.
           var profile = $firebaseObject(ref);
           return profile;
