@@ -2,7 +2,7 @@ angular.module('profileModule', ['firebase', 'ui.router']);
 
 var profileApp = angular.module('profileModule');
 
-profileApp.controller('ProfileController', ['$stateParams', '$scope', 'getProfileInformation', function($scope, $stateParams, getProfileInformation) {
+profileApp.controller('ProfileController', ['$stateParams', '$scope', 'getProfileInformation', function($stateParams, $scope, getProfileInformation) {
 
 	var ref = new Firebase("https://interestmatcher.firebaseio.com/");
 
